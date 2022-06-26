@@ -2,6 +2,8 @@ import { useRouter } from "next/router";
 import ProjectIntro from "../components/ProjectIntro";
 import ProjectEx from "../components/ProjectEx";
 import ProjectPlan from "../components/ProjectPlan";
+import ProjectConcept from "../components/ProjectConcept";
+import ProjectPageInfo from "../components/ProjectPageInfo";
 
 const projectIntroData = {
   project: "ppaeyot",
@@ -51,6 +53,44 @@ const projectPlanData = {
   pointColor: "--ppayot-point-color",
 };
 
+const ProjectConceptData = {
+  pointColor: "--ppayot-point-color",
+  conceptLogo: {
+    src: "/images/ppaeyot/logo.png",
+    width: "160",
+    height: "80",
+    desc: "식사와 운동을 나타내는 포크와 덤벨을 모티브로 포인트컬러로 밝고 활기찬 에너지를, 곡선으로 활동성을 더했습니다.",
+  },
+  conceptColor: {
+    box: [
+      "--ppayot-concept-color-1",
+      "--ppayot-concept-color-2",
+      "--ppayot-concept-color-3",
+      "--ppayot-concept-color-4",
+    ],
+    desc: "의욕과 열정의 레드계열 컬러로 아이보리와 어우러져 따뜻함과 친근함을 느끼게 해주며 운동페이지 강조색으로 블루 추가 사용",
+  },
+  conceptFont: {
+    name: "노토산스(noto Sans CJK KR)",
+    font: "--ppayot-concept-font",
+    desc: "깔끔한 고딕체로 가독성이 좋고 귀여운 느낌이 있어 전체적인 사이트 분위기에 어울립니다.",
+  },
+};
+
+const ProjectPageInfoData = {
+  main: {
+    img: "/images/ppaeyot/ppaeyot_index.png",
+    desc: `메인슬라이드를 넓게 배치하여 다양한 컬러가 슬라이딩 되며 밝고 즐거운 느낌을 불러일으켜
+  사이트 접속시부터 의지와 활기를 불어일으킵니다.
+  또한 베이지컬러 배경으로 따뜻한 느낌을 더하였고 식품관련 컨텐츠가있기에 잘 어우러집니다.`,
+  },
+  sub: {
+    img: "/images/ppaeyot/exercise.png",
+    desc: `다른 서브페이지들과 다르게 운동서브페이지는 블루포인트컬러로 힘과 건강함을 표현하며,
+    너무 밝지않은 톤으로 가벼운느낌 없이 눈에 잘 띕니다.`,
+  },
+};
+
 export default function Publishing() {
   const router = useRouter();
   const nowPath = router.pathname.split("/publishing/")[1];
@@ -70,6 +110,8 @@ export default function Publishing() {
           <p>{projectPlanData.plans[4].desc}</p>
         </div>
       </ProjectPlan>
+      <ProjectConcept data={ProjectConceptData} />
+      <ProjectPageInfo data={ProjectPageInfoData} />
 
       {/* 스타일 */}
       <style jsx>{`

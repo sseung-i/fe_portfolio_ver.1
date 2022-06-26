@@ -26,7 +26,6 @@ export default function ProjectEx({ data }) {
         }
 
         p {
-          white-space: pre-wrap;
           margin-top: 20px;
           font-size: 1.2em;
           line-height: 1.5em;
