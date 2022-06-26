@@ -1,0 +1,10 @@
+#ppaeyot {
+  --ppayot-gra-color: linear-gradient(#ff839a, #fce8bb);
+  --ppayot-index-tab-font-color: #ff839a;
+  --ppayot-point-color: #d6264e;
+  --ppayot-concept-color-1: #d6264e;
+  --ppayot-concept-color-2: #ffe8b5;
+  --ppayot-concept-color-3: #ff839a;
+  --ppayot-concept-color-4: #1f0082;
+  --ppayot-concept-font: "Noto Sans KR", sans-serif;
+}
