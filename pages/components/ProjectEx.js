@@ -1,16 +1,13 @@
 import Link from "next/link";
 
 export default function ProjectEx({ data }) {
-  const { title, desc, pointColor } = data;
+  const { title, desc, siteUrl, pointColor } = data;
   return (
     <section className="maxWidthWrap">
       <h2>{title}</h2>
       <p>{desc}</p>
       <div>
-        <Link
-          href="https://sseung-i.github.io/publishing_ppaeyot/"
-          target="_blank"
-        >
+        <Link href={siteUrl} target="_blank">
           <a>사이트 보러가기</a>
         </Link>
       </div>

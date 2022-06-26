@@ -8,3 +8,14 @@
   --ppayot-concept-color-4: #1f0082;
   --ppayot-concept-font: "Noto Sans KR", sans-serif;
 }
+
+#moviego {
+  --moviego-gra-color: linear-gradient(#2c4565, #a33550);
+  --moviego-index-tab-font-color: #2c4565;
+  --moviego-point-color: #ff0000;
+  --moviego-concept-color-1: #ff0000;
+  --moviego-concept-color-2: #666;
+  --moviego-concept-color-3: #fff;
+  --moviego-concept-color-4: #000;
+  --moviego-concept-font: "Nanum Gothic", "나눔 고딕", "나눔고딕", sans-serif;
+}
