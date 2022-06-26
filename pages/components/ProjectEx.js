@@ -7,7 +7,7 @@ export default function ProjectEx({ data }) {
       <h2>{title}</h2>
       <p>{desc}</p>
       <div>
-        <Link href={siteUrl} target="_blank">
+        <Link href={siteUrl}>
           <a>사이트 보러가기</a>
         </Link>
       </div>

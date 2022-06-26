@@ -19,3 +19,14 @@
   --moviego-concept-color-4: #000;
   --moviego-concept-font: "Nanum Gothic", "나눔 고딕", "나눔고딕", sans-serif;
 }
+
+#jejuinside {
+  --jejuinside-gra-color: linear-gradient(#469e89, #3075bd);
+  --jejuinside-index-tab-font-color: #00a088;
+  --jejuinside-point-color: #0a75c3;
+  --jejuinside-concept-color-1: #0a75c3;
+  --jejuinside-concept-color-2: #00a088;
+  --jejuinside-concept-color-3: #ff7200;
+  --jejuinside-concept-color-4: #727071;
+  --jejuinside-concept-font: "Jeju Gothic", "JejuGothicOTF", sans-serif;
+}

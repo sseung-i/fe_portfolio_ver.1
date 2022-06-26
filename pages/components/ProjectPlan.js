@@ -36,7 +36,7 @@ export default function ProjectPlan({ data, children }) {
           justify-content: center;
           gap: 60px;
           width: 100%;
-          height: 300px;
+          height: 280px;
           margin-top: 30px;
         }
 
