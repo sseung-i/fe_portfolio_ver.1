@@ -1,9 +1,7 @@
 import { useRouter } from "next/router";
-import ProjectIntro from "../components/ProjectIntro";
-import ProjectEx from "../components/ProjectEx";
-import ProjectPlan from "../components/ProjectPlan";
-import ProjectConcept from "../components/ProjectConcept";
-import ProjectPageInfo from "../components/ProjectPageInfo";
+import ProjectEx from "./components/ProjectEx";
+import ProjectPlan from "./components/ProjectPlan";
+import ProjectConcept from "./components/ProjectConcept";
 import {
   projectIntroData,
   projectExData,
@@ -11,14 +9,15 @@ import {
   ProjectConceptData,
   ProjectPageInfoData,
 } from "../../data/JEJUINSIDEDATA";
-import ProjectPageInfoRespon from "../components/ProjectPageInfo_respon";
+import ProjectPageInfoRespon from "./components/ProjectPageInfo_respon";
+import ProjectIntroRespon from "./components/ProjectIntro_respon";
 
 export default function Publishing() {
   const router = useRouter();
   const nowPath = router.pathname.split("/publishing/")[1];
   return (
     <div id="jejuinside">
-      <ProjectIntro
+      <ProjectIntroRespon
         bgcolor="--ppayot-gra-color"
         subCate={nowPath}
         data={projectIntroData}

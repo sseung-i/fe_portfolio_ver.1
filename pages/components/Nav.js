@@ -1,23 +1,43 @@
 import { useRouter } from "next/router";
 import NavMenu from "./NavMenu";
 import Image from "next/image";
+import Link from "next/link";
 
 const index = "/";
 const FE = "/frontend";
-const publishing = "/publishing/ppaeyot";
+const publishing = [
+  "/publishing/ppaeyot",
+  "/publishing/moviego",
+  "/publishing/jejuinside",
+];
 
 export default function Nav() {
   const router = useRouter();
+
+  const nowPublishing =
+    router.pathname === publishing[0] ||
+    router.pathname === publishing[1] ||
+    router.pathname === publishing[2];
+
   return (
     <nav className="maxWidthWrap">
-      <Image src="/images/logo.png" alt="logo image" width={100} height={100} />
+      <Link href="/">
+        <a>
+          <Image
+            src="/images/logo.png"
+            alt="logo image"
+            width={100}
+            height={100}
+          />
+        </a>
+      </Link>
       <div>
         <NavMenu path={index} name="MAIN" now={router.pathname === index} />
         <NavMenu path={FE} name="Front-End" now={router.pathname === FE} />
         <NavMenu
-          path={publishing}
+          path="/publishing/ppaeyot"
           name="Publishing"
-          now={router.pathname === publishing}
+          now={nowPublishing}
         />
       </div>
 
