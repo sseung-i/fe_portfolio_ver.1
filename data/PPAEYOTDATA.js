@@ -2,7 +2,7 @@ export const projectIntroData = {
   project: "ppaeyot",
   bgGradation: "--ppayot-gra-color",
   indexContent: "기본형 웹사이트로 일반 데스크탑 모니터에 최적화입니다.",
-  videoPoster: "/images/ppaeyot/poster.png",
+  youtubeUrl: "https://www.youtube.com/embed/OvVfL_tyIFw?controls=0",
 };
 
 export const projectExData = {

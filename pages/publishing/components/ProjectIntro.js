@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default function ProjectIntro({ data }) {
-  const { project, bgGradation, indexContent, videoPoster } = data;
+  const { project, bgGradation, indexContent, youtubeUrl } = data;
 
   return (
     <section>
@@ -28,12 +28,18 @@ export default function ProjectIntro({ data }) {
           </li>
         </ul>
         <div className="notebook">
-          <p></p>
+          <p />
           <div className="img">
             <div>
-              <video controls width="642px" poster={videoPoster}>
-                <source src="img/ppaeyot/ppaeyot_movie.mp4" type="video/mp4" />
-              </video>
+              <iframe
+                width="642"
+                height="360"
+                src={youtubeUrl}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
           </div>
         </div>

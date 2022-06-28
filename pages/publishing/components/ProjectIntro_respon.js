@@ -5,7 +5,7 @@ export default function ProjectIntroRespon({ data }) {
     project,
     bgGradation,
     indexContent,
-    videoPoster: { desktop: deskPoster, tab: tabPoster, mobile: moPoster },
+    youtubeUrl: { desktop: deskUrl, tab: tabUrl, mobile: moUrl },
   } = data;
 
   return (
@@ -36,9 +36,15 @@ export default function ProjectIntroRespon({ data }) {
           <p />
           <div className="img">
             <div>
-              <video controls width="642px" poster={deskPoster}>
-                <source src="img/ppaeyot/ppaeyot_movie.mp4" type="video/mp4" />
-              </video>
+              <iframe
+                width="642"
+                height="360"
+                src={deskUrl}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
           </div>
         </div>
@@ -47,12 +53,15 @@ export default function ProjectIntroRespon({ data }) {
             <p />
             <div className="img">
               <div>
-                <video controls height="330px" poster={tabPoster}>
-                  <source
-                    src="img/ppaeyot/ppaeyot_movie.mp4"
-                    type="video/mp4"
-                  />
-                </video>
+                <iframe
+                  width="250"
+                  height="330"
+                  src={tabUrl}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </div>
             </div>
           </div>
@@ -62,12 +71,15 @@ export default function ProjectIntroRespon({ data }) {
             <p />
             <div className="img">
               <div>
-                <video controls height="225px" poster={moPoster}>
-                  <source
-                    src="img/ppaeyot/ppaeyot_movie.mp4"
-                    type="video/mp4"
-                  />
-                </video>
+                <iframe
+                  width="105"
+                  height="225"
+                  src={moUrl}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </div>
             </div>
           </div>

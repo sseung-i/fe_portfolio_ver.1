@@ -2,7 +2,8 @@ export const projectIntroData = {
   project: "moviego",
   bgGradation: "--moviego-gra-color",
   indexContent: "기본형 웹사이트로 일반 데스크탑 모니터에 최적화입니다.",
-  videoPoster: "/images/moviego/poster.png",
+  // videoPoster: "/images/moviego/poster.png",
+  youtubeUrl: "https://www.youtube.com/embed/7IS_yvploMs?controls=0",
 };
 
 export const projectExData = {

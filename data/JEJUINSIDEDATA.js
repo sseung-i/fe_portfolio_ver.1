@@ -3,10 +3,10 @@ export const projectIntroData = {
   bgGradation: "--jejuinside-gra-color",
   indexContent:
     "데스크탑/태블릿/모바일 각 운영체제의 최적화 사이즈에 맞게 제작되었습니다.",
-  videoPoster: {
-    desktop: "/images/jejuinside/desktop_poster.png",
-    tab: "/images/jejuinside/tab_poster.png",
-    mobile: "/images/jejuinside/mo_poster.png",
+  youtubeUrl: {
+    desktop: "https://www.youtube.com/embed/cUQMdq3hvyE?controls=0",
+    tab: "https://www.youtube.com/embed/ls_labsGvss",
+    mobile: "https://www.youtube.com/embed/DWORZS_3w_g",
   },
 };
 
