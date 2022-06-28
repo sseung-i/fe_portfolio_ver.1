@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
-import ProjectIntro from "./components/ProjectIntro";
-import ProjectEx from "./components/ProjectEx";
-import ProjectConcept from "./components/ProjectConcept";
-import ProjectPageInfo from "./components/ProjectPageInfo";
+import ProjectIntro from "../../components/project/ProjectIntro";
+import ProjectEx from "../../components/project/ProjectEx";
+import ProjectConcept from "../../components/project/ProjectConcept";
+import ProjectPageInfo from "../../components/project/ProjectPageInfo";
 
 import {
   projectIntroData,

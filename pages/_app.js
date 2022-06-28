@@ -1,7 +1,7 @@
-import Nav from "../components/Nav";
+import Nav from "../components/layout/Nav";
+import Footer from "../components/layout/Footer";
 import "../styles/globals.css";
 import "../styles/theme.css";
-import Footer from "../components/Footer";
 
 export default function App({ Component, pageProps }) {
   return (

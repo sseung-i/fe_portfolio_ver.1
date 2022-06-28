@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function ProjectPageInfoRespon({ data }) {
   const { desktop, tab, mobile } = data;
   return (
@@ -8,7 +10,13 @@ export default function ProjectPageInfoRespon({ data }) {
             <h3>DESKTOP</h3>
             <p className="desktopBgImg" />
             <div className="pageCover">
-              <img src={desktop} alt="Index" />
+              <Image
+                src={desktop}
+                width={507}
+                height={319}
+                alt="notebook image"
+              />
+              {/* <img src={desktop} alt="Index" /> */}
             </div>
           </div>
         </li>
