@@ -17,6 +17,7 @@ export const projectExData = {
   여행중 모바일로 바로바로 확인할 수 있도록 합니다.
   여행시 일기도 작성하여 나중에 추억으로 볼 수도 있습니다.`,
   siteUrl: "https://sseung-i.github.io/publishing_jejuinside/",
+  githubUrl: "https://github.com/sseung-i/publishing_jejuinside",
   pointColor: "--jejuinside-point-color",
 };
 

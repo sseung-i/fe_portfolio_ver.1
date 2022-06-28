@@ -13,6 +13,7 @@ export const projectExData = {
   온라인에 널려있는 정보들보다 정확하게 정보제공하며 회원들끼리 정보도 공유할 수 있어
   다이어트의 모든 정보를 최대한 얻을 수 있도록 합니다.`,
   siteUrl: "https://sseung-i.github.io/publishing_ppaeyot/",
+  githubUrl: "https://github.com/sseung-i/publishing_ppaeyot",
   pointColor: "--ppayot-point-color",
 };
 

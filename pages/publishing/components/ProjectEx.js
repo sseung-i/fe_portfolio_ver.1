@@ -1,14 +1,17 @@
 import Link from "next/link";
 
 export default function ProjectEx({ data }) {
-  const { title, desc, siteUrl, pointColor } = data;
+  const { title, desc, siteUrl, githubUrl, pointColor } = data;
   return (
     <section className="maxWidthWrap">
       <h2>{title}</h2>
       <p>{desc}</p>
       <div>
         <Link href={siteUrl}>
-          <a>사이트 보러가기</a>
+          <a target="_blank">사이트 보러가기</a>
+        </Link>
+        <Link href={githubUrl}>
+          <a target="_blank">GITHUB</a>
         </Link>
       </div>
       <style jsx>{`
@@ -28,10 +31,16 @@ export default function ProjectEx({ data }) {
           line-height: 1.5em;
         }
 
+        div {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+        }
+
         a {
           display: inline-block;
           margin-top: 20px;
-          width: 185px;
+          width: 150px;
           height: 36px;
           line-height: 36px;
           border-radius: 18px;

@@ -1,13 +1,28 @@
+import FrontendPortfolio from "./components/FrontendPortfolio";
+import { frontendInterns, frontendProject } from "../data/FRONTEND";
+
 export default function FrontEnd() {
   return (
-    <h1>
-      Front End
+    <div className="maxWidthWrap">
+      <h2>
+        <span>INTERNSHIP</span>
+      </h2>
+      <FrontendPortfolio data={frontendInterns} />
+      <h2>
+        <span>PROJECT</span>
+      </h2>
+      <FrontendPortfolio data={frontendProject} />
       <style jsx>{`
-        h1 {
-          margin-top: 100px;
-          text-align: center;
+        h2 {
+          margin: 100px 0 50px;
+        }
+
+        h2 span {
+          color: #ff839a;
+          border-bottom: 3px solid #ff839a;
+          padding-bottom: 10px;
         }
       `}</style>
-    </h1>
+    </div>
   );
 }

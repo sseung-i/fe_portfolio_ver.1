@@ -2,7 +2,7 @@ export const projectIntroData = {
   project: "moviego",
   bgGradation: "--moviego-gra-color",
   indexContent: "기본형 웹사이트로 일반 데스크탑 모니터에 최적화입니다.",
-  videoPoster: "/images/ppaeyot/poster.png",
+  videoPoster: "/images/moviego/poster.png",
 };
 
 export const projectExData = {
@@ -11,6 +11,7 @@ export const projectExData = {
   '영화'+'가다' = 가서 영화를 본다는 심플한 단어 조합으로 기억/부르기 쉽도록 네이밍 하였으며,
   기존 영화관사이트들을 조사하여 영화관사이트에 꼭 필요한 부분들만 모아 기획하였습니다.`,
   siteUrl: "https://sseung-i.github.io/publishing_moviego/",
+  githubUrl: "https://github.com/sseung-i/publishing_moviego",
   pointColor: "--moviego-point-color",
 };
 
