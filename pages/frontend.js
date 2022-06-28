@@ -1,4 +1,4 @@
-import FrontendPortfolio from "./components/FrontendPortfolio";
+import FrontendPortfolio from "../components/FrontendPortfolio";
 import { frontendInterns, frontendProject } from "../data/FRONTEND";
 
 export default function FrontEnd() {
