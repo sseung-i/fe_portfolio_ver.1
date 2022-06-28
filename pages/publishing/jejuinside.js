@@ -9,8 +9,8 @@ import {
   ProjectConceptData,
   ProjectPageInfoData,
 } from "../../data/JEJUINSIDEDATA";
-import ProjectPageInfoRespon from "./components/ProjectPageInfo_respon";
-import ProjectIntroRespon from "./components/ProjectIntro_respon";
+import ProjectPageInfoRespon from "../../components/project/ProjectPageInfo_respon";
+import ProjectIntroRespon from "../../components/project/ProjectIntro_respon";
 
 export default function Publishing() {
   const router = useRouter();
