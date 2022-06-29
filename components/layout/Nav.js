@@ -1,7 +1,9 @@
+import { useContext } from "react";
 import { useRouter } from "next/router";
-import NavMenu from "./NavMenu";
 import Image from "next/image";
 import Link from "next/link";
+import NavMenu from "./NavMenu";
+import { TestContext } from "../../components/MediaQueryProvider";
 
 const index = "/";
 const FE = "/frontend";
@@ -12,6 +14,7 @@ const publishing = [
 ];
 
 export default function Nav() {
+  const { isTab } = useContext(TestContext);
   const router = useRouter();
 
   const nowPublishing =
@@ -45,6 +48,7 @@ export default function Nav() {
         nav {
           display: flex;
           padding: 30px 0 10px;
+          /* padding: ${isTab ? "0 7%" : "30px 0 10px"}; */
         }
         img {
           width: 70px;

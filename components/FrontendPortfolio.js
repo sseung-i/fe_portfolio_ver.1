@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useContext } from "react";
+import { TestContext } from "../components/MediaQueryProvider";
 
 export default function FrontendPortfolio({ data }) {
   const LINKICONS = {
@@ -7,6 +9,8 @@ export default function FrontendPortfolio({ data }) {
     github: "/images/icons/github.png",
     site: "/images/icons/site.png",
   };
+
+  const { isDesktop, isLap, isTab } = useContext(TestContext);
 
   return (
     <section>
@@ -69,6 +73,7 @@ export default function FrontendPortfolio({ data }) {
           flex-direction: column;
           gap: 70px;
           padding-bottom: 70px;
+          font-size: ${isTab ? "18px" : "16px"};
         }
 
         section:not(:last-child) {
@@ -78,21 +83,21 @@ export default function FrontendPortfolio({ data }) {
         article {
           display: flex;
           gap: 15%;
-          word-break: keep-all;
+          ${isTab && "flex-direction: column;"}
         }
 
         .left {
-          width: 25%;
+          width: ${isTab ? "100%" : "25%"};
         }
 
         .left h4 {
-          font-size: 1.3rem;
+          font-size: 1.3em;
         }
 
         .info {
           margin-top: 10px;
-          font-size: 0.9rem;
-          line-height: 1.4;
+          font-size: 0.9em;
+          line-height: 1.5;
         }
 
         .team {
@@ -102,7 +107,7 @@ export default function FrontendPortfolio({ data }) {
 
         .period {
           margin-top: 5px;
-          font-size: 0.8rem;
+          font-size: 0.8em;
         }
 
         .links {
@@ -115,11 +120,11 @@ export default function FrontendPortfolio({ data }) {
         }
 
         .right {
-          width: 60%;
+          ${isTab ? "width:100%; margin-top: 30px;" : "width: 60%"}
         }
 
         .right h5 {
-          font-size: 1.1rem;
+          font-size: 1.1em;
           font-weight: 800;
         }
 
@@ -137,9 +142,9 @@ export default function FrontendPortfolio({ data }) {
         }
 
         .right ul li {
-          font-size: 0.9rem;
+          font-size: 0.9em;
           list-style: unset;
-          line-height: 1.4;
+          line-height: 1.5;
         }
 
         .right ul li:not(:last-child) {

@@ -1,24 +1,61 @@
 import { useEffect, useState, createContext } from "react";
 import { useMediaQuery } from "react-responsive";
 
-export const TestContext = createContext({ isTab: null });
+export const TestContext = createContext({
+  isDesktop: null,
+  isLap: null,
+  isTab: null,
+});
 
-export const IsTabProvider = ({ children }) => {
-  const [isTab, setIsTab] = useState(false);
+export const IsResponsiveProvider = ({ children }) => {
+  const [isMedia, setIsMedia] = useState({
+    isDesktop: null,
+    isLap: null,
+    isTab: null,
+  });
+
+  const { isDesktop, isLap, isTab } = isMedia;
+
+  const desktop = useMediaQuery({
+    query: "(min-width:993px)",
+  });
+
+  const lap = useMediaQuery({
+    query: "(min-width:620px) and (max-width:992px)",
+  });
+
   const tab = useMediaQuery({
-    query: "(min-width:0px) and (max-width:960px)",
+    query: "(max-width:619px)",
   });
 
   useEffect(() => {
-    if (tab) {
-      setIsTab(true);
+    if (desktop) {
+      setIsMedia({
+        isDesktop: true,
+        isLap: false,
+        isTab: false,
+      });
+    } else if (lap) {
+      setIsMedia({
+        isDesktop: false,
+        isLap: true,
+        isTab: false,
+      });
+    } else if (tab) {
+      setIsMedia({
+        isDesktop: false,
+        isLap: false,
+        isTab: true,
+      });
     } else {
-      setIsTab(false);
+      return;
     }
-  }, [tab]);
+  }, [desktop, lap, tab]);
 
   return (
-    <TestContext.Provider value={{ isTab }}>{children}</TestContext.Provider>
+    <TestContext.Provider value={{ isDesktop, isLap, isTab }}>
+      {children}
+    </TestContext.Provider>
   );
 };
 

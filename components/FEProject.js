@@ -76,7 +76,6 @@ export default function FEProject() {
         article {
           display: flex;
           gap: 15%;
-          word-break: keep-all;
         }
 
         .left {
@@ -90,7 +89,7 @@ export default function FEProject() {
         .info {
           margin-top: 10px;
           font-size: 0.9rem;
-          line-height: 1.4;
+          line-height: 1.5;
         }
 
         .team {
