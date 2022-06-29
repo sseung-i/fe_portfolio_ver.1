@@ -1,6 +1,12 @@
 import Link from "next/link";
+import { useContext } from "react";
+import { TestContext } from "../components/MediaQueryProvider";
 
 export default function Index() {
+  const { isTab } = useContext(TestContext);
+
+  console.log("되냐??" + isTab);
+
   return (
     <section className="maxWidthWrap">
       <article className="introduce">
@@ -134,14 +140,17 @@ export default function Index() {
 
         .ability {
           display: flex;
+          flex-direction: ${isTab ? "column" : "row"};
+          /* padding: ${isTab ? "0 7%" : ""}; */
         }
 
         .skills {
-          width: 75%;
+          width: ${isTab ? "100%" : "75%"};
+          margin: ${isTab ? "0 auto" : ""};
         }
 
         .certificate {
-          width: 25%;
+          width: ${isTab ? "100%" : "25%"};
         }
 
         .skills > ul {
