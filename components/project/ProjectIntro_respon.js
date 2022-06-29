@@ -105,7 +105,7 @@ export default function ProjectIntroRespon({ data }) {
         }
 
         h2 {
-          font-size: 2.3rem;
+          font-size: 2.3em;
           color: inherit;
         }
 

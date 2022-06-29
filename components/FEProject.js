@@ -83,12 +83,12 @@ export default function FEProject() {
         }
 
         .left h4 {
-          font-size: 1.3rem;
+          font-size: 1.3em;
         }
 
         .info {
           margin-top: 10px;
-          font-size: 0.9rem;
+          font-size: 0.9em;
           line-height: 1.5;
         }
 
@@ -99,7 +99,7 @@ export default function FEProject() {
 
         .period {
           margin-top: 5px;
-          font-size: 0.8rem;
+          font-size: 0.8em;
         }
 
         .links {
@@ -116,7 +116,7 @@ export default function FEProject() {
         }
 
         .right h5 {
-          font-size: 1.1rem;
+          font-size: 1.1em;
           font-weight: 800;
         }
 
@@ -133,7 +133,7 @@ export default function FEProject() {
         }
 
         .right ul li {
-          font-size: 0.9rem;
+          font-size: 0.9em;
           list-style: unset;
         }
 

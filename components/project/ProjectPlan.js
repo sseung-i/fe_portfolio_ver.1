@@ -1,5 +1,11 @@
+import { useContext } from "react";
+import { TestContext } from "../../components/MediaQueryProvider";
+
 export default function ProjectPlan({ data, children }) {
   const { plans, pointColor } = data;
+
+  const { isDesktop, isLap, isTab } = useContext(TestContext);
+
   return (
     <section>
       <div className="maxWidthWrap">
@@ -27,7 +33,7 @@ export default function ProjectPlan({ data, children }) {
         }
 
         h2 {
-          font-size: 2rem;
+          font-size: 2em;
           color: var(${pointColor});
         }
 
@@ -36,32 +42,43 @@ export default function ProjectPlan({ data, children }) {
           justify-content: center;
           gap: 60px;
           width: 100%;
-          height: 280px;
+          height: ${isDesktop && "280px"};
           margin-top: 30px;
+          ${!isDesktop && "flex-direction: column;"}
         }
 
         li {
           position: relative;
           height: 100%;
           border: 1px solid #ddd;
+          ${!isDesktop && `margin: 0 auto; border:0;`}
         }
 
         li > div {
-          height: 200px;
+          ${isDesktop
+            ? "height: 200px"
+            : isTab
+            ? "width: 90%; height: 270px; margin: 0 auto; border: 1px solid #ddd;"
+            : "width: 450px; height: 350px; margin: 0 auto; border: 1px solid #ddd;"}
         }
 
         li:nth-child(1) > div {
-          background: url(${plans[0].img}) no-repeat top center;
+          background: url(${plans[0].img}) no-repeat center center;
+          ${!isDesktop && "background-size: auto 110%"};
         }
         li:nth-child(2) > div {
-          background: url(${plans[1].img}) no-repeat top center;
+          background: url(${plans[1].img}) no-repeat center center;
+          ${!isDesktop && "background-size: auto 110%"};
         }
         li:nth-child(3) > div {
-          background: url(${plans[2].img}) no-repeat top center;
+          background: url(${plans[2].img}) no-repeat center center;
+          ${!isDesktop && "background-size: auto 110%"};
         }
 
         li:nth-child(2)::before,
         li:nth-child(2)::after {
+          ${isDesktop &&
+          `
           position: absolute;
           top: 0;
           display: inline-block;
@@ -69,6 +86,7 @@ export default function ProjectPlan({ data, children }) {
           width: 30px;
           height: 300px;
           background: url(/images/ppaeyot/gt.png) no-repeat top center;
+          `}
         }
 
         li:nth-child(2)::before {
@@ -80,10 +98,10 @@ export default function ProjectPlan({ data, children }) {
         }
 
         li > p {
-          width: 280px;
+          width: ${isDesktop ? "280px" : "100%"};
           height: 80px;
           padding: 15px;
-          line-height: 1.5rem;
+          line-height: 1.5em;
         }
       `}</style>
     </section>

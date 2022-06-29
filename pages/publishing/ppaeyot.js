@@ -1,4 +1,6 @@
 import { useRouter } from "next/router";
+import { useContext } from "react";
+import { TestContext } from "../../components/MediaQueryProvider";
 import ProjectIntro from "../../components/project/ProjectIntro";
 import ProjectEx from "../../components/project/ProjectEx";
 import ProjectPlan from "../../components/project/ProjectPlan";
@@ -11,10 +13,14 @@ import {
   ProjectConceptData,
   ProjectPageInfoData,
 } from "../../data/PPAEYOTDATA";
+import Image from "next/image";
 
 export default function Publishing() {
   const router = useRouter();
   const nowPath = router.pathname.split("/publishing/")[1];
+
+  const { isDesktop, isLap, isTab } = useContext(TestContext);
+
   return (
     <div id="ppaeyot">
       <ProjectIntro
@@ -25,9 +31,11 @@ export default function Publishing() {
       <ProjectEx data={projectExData} />
       <ProjectPlan data={projectPlanData}>
         <div className="plan plan4">
+          <img src={projectPlanData.plans[3].img} alt="plan image" />
           <p>{projectPlanData.plans[3].desc}</p>
         </div>
         <div className="plan plan5">
+          <img src={projectPlanData.plans[4].img} alt="plan image" />
           <p>{projectPlanData.plans[4].desc}</p>
         </div>
       </ProjectPlan>
@@ -36,33 +44,28 @@ export default function Publishing() {
 
       {/* 스타일 */}
       <style jsx>{`
-        .plan4 {
-          height: 350px;
-          margin: 50px auto;
-          background: url(${projectPlanData.plans[3].img}) no-repeat center
-            center;
-          background-size: 70%;
+        .plan4,
+        .plan5 {
           position: relative;
+          margin: 50px auto;
           border-top: 3px dotted #ddd;
         }
 
         .plan5 {
-          width: 1000px;
-          height: 900px;
-          margin: 50px auto;
-          background: url(${projectPlanData.plans[4].img}) no-repeat center
-            center;
-          background-size: 70%;
-          position: relative;
-          border-top: 3px dotted #ddd;
+          padding: 50px;
         }
+
+        img {
+          width: 90%;
+        }
+
+        /* background: url(${projectPlanData.plans[4].img}) no-repeat center
+          center;
+        background-size: ${isDesktop ? "70%" : "100%"}; */
 
         .plan4 > p,
         .plan5 > p {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
+          margin-top: 30px;
         }
       `}</style>
     </div>

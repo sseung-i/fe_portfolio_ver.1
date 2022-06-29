@@ -2,6 +2,7 @@ import Link from "next/link";
 
 export default function ProjectEx({ data }) {
   const { title, desc, siteUrl, githubUrl, pointColor } = data;
+
   return (
     <section className="maxWidthWrap">
       <h2>{title}</h2>

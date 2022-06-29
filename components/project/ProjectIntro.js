@@ -1,7 +1,11 @@
 import Link from "next/link";
+import { useContext } from "react";
+import { TestContext } from "../../components/MediaQueryProvider";
 
 export default function ProjectIntro({ data }) {
   const { project, bgGradation, indexContent, youtubeUrl } = data;
+
+  const { isDesktop, isLap, isTab } = useContext(TestContext);
 
   return (
     <section>
@@ -27,22 +31,32 @@ export default function ProjectIntro({ data }) {
             </Link>
           </li>
         </ul>
-        <div className="notebook">
-          <p />
-          <div className="img">
-            <div>
-              <iframe
-                width="642"
-                height="360"
-                src={youtubeUrl}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+        {!isDesktop ? (
+          <iframe
+            src={youtubeUrl}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        ) : (
+          <div className="notebook">
+            <p />
+            <div className="img">
+              <div>
+                <iframe
+                  width="642"
+                  height="360"
+                  src={youtubeUrl}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
             </div>
           </div>
-        </div>
+        )}
         <div className="circle" />
       </div>
       {/*
@@ -57,14 +71,14 @@ export default function ProjectIntro({ data }) {
         .graBgWrap {
           position: relative;
           max-width: 1000px;
-          height: 750px;
+          height: ${isDesktop ? "750px" : "640px"};
           margin: 0 auto;
           padding-top: 60px;
           color: #fff;
         }
 
         h2 {
-          font-size: 2.3rem;
+          font-size: 2.3em;
           color: inherit;
         }
 
@@ -75,13 +89,14 @@ export default function ProjectIntro({ data }) {
         }
 
         ul {
+          position: relative;
           display: flex;
           justify-content: center;
           gap: 20px;
-          /* width: 520px; */
           height: 35px;
           margin: 50px auto 20px;
           text-align: center;
+          z-index: 1;
         }
 
         ul > li > a {
@@ -118,12 +133,20 @@ export default function ProjectIntro({ data }) {
         }
 
         .notebook {
+          position: relative;
           margin: 0 auto;
           width: 760px;
           height: 488px;
           margin-top: 45px;
-          position: relative;
           z-index: 1;
+        }
+
+        iframe {
+          /* position: relative; */
+          z-index: 1;
+          ${!isDesktop &&
+          "margin-top: 30px; width: 600px; box-shadow: 0 0 10px 0 rgba(0,0,0,0.2)"};
+          aspect-ratio: 6/3.75;
         }
 
         .notebook > p {

@@ -1,8 +1,14 @@
+import { useContext } from "react";
+import { TestContext } from "../../components/MediaQueryProvider";
+
 export default function ProjectPageInfo({ data }) {
   const {
     main: { img: mainImg, desc: mainDesc },
     sub: { img: subImg, desc: subDesc },
   } = data;
+
+  const { isDesktop, isLap, isTab } = useContext(TestContext);
+
   return (
     <section className="maxWidthWrap">
       <div>
@@ -25,13 +31,14 @@ export default function ProjectPageInfo({ data }) {
       {/* 스타일 */}
       <style jsx>{`
         section {
-          height: 1100px;
+          height: ${isDesktop ? "1000px" : "fit-content"};
           text-align: center;
+          ${isDesktop || "padding-bottom: 100px;"}
         }
 
         section > div {
           position: relative;
-          top: -350px;
+          top: ${isDesktop ? "-350px" : "100px"};
         }
 
         section > div > div {
@@ -53,7 +60,7 @@ export default function ProjectPageInfo({ data }) {
         }
 
         .pageCover {
-          width: 800px;
+          max-width: 800px;
           height: 480px;
           margin: 0 auto;
           background-color: #eee;
@@ -66,10 +73,10 @@ export default function ProjectPageInfo({ data }) {
         }
 
         p {
-          width: 800px;
+          max-width: 800px;
           margin: 20px auto 0;
           text-align: center;
-          line-height: 1.5rem;
+          line-height: 1.5em;
         }
       `}</style>
     </section>

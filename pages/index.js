@@ -109,7 +109,7 @@ export default function Index() {
         }
 
         h1 {
-          font-size: 2.5rem;
+          font-size: 2.5em;
           line-height: 1.3;
           text-align: center;
         }
@@ -126,7 +126,7 @@ export default function Index() {
 
         h4 {
           margin-bottom: 14px;
-          font-size: 1.2rem;
+          font-size: 1.2em;
         }
 
         .introduce {
@@ -141,7 +141,7 @@ export default function Index() {
           flex-wrap: no-wrap;
           gap: 30px;
           margin-top: 30px;
-          font-size: 1.2rem;
+          font-size: 1.2em;
         }
 
         .myInfo li {
@@ -166,7 +166,7 @@ export default function Index() {
           padding: 10px 30px;
           border-radius: 10px;
           margin-bottom: 30px;
-          font-size: 1.2rem;
+          font-size: 1.2em;
           font-weight: 600;
           line-height: 1.5;
           background: #eee;
@@ -174,7 +174,7 @@ export default function Index() {
 
         .introduce > div:last-child > p:not(.summary) {
           margin: 0 auto;
-          font-size: 1.2rem;
+          font-size: 1.2em;
           line-height: 1.5;
         }
 

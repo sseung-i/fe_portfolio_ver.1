@@ -1,6 +1,10 @@
 import Image from "next/image";
+import { useContext } from "react";
+import { TestContext } from "../../components/MediaQueryProvider";
 
 export default function ProjectConcept({ data }) {
+  const { isDesktop, isLap, isTab } = useContext(TestContext);
+
   const {
     pointColor,
     conceptLogo: { src: logoSrc, width: logoW, height: logoH, desc: logoDesc },
@@ -51,13 +55,13 @@ export default function ProjectConcept({ data }) {
         section {
           margin-top: 90px;
           width: 100%;
-          height: 800px;
+          height: ${isDesktop ? "800px" : "fit-content"};
           background-color: #eee;
           text-align: center;
         }
 
         section > div {
-          padding-top: 60px;
+          padding-top: 50px;
         }
 
         h2 {
@@ -68,19 +72,19 @@ export default function ProjectConcept({ data }) {
         .conceptGrid {
           display: flex;
           margin-top: 50px;
+          flex-direction: ${!isDesktop && "column"};
         }
 
         .conceptGrid > li {
           width: 100%;
-          padding: 0 25px;
         }
 
         .conceptGrid > li:not(:last-child) {
-          border-right: 3px dotted #fff;
+          ${isDesktop && "border-right: 3px dotted #fff;"}
         }
 
         .conceptGrid h3 {
-          font-size: 1.5rem;
+          font-size: 1.5em;
         }
 
         .conceptGrid div {
@@ -90,7 +94,14 @@ export default function ProjectConcept({ data }) {
 
         .conceptGrid p {
           line-height: 1.5em;
+          padding: 0 25px;
           text-align: justify;
+          ${!isDesktop &&
+          `
+          width: 70%;
+          margin: 0 auto 50px;
+          text-align: center;
+          `}
         }
 
         .colorWrap {

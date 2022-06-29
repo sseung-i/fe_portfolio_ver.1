@@ -82,12 +82,14 @@ export default function FrontendPortfolio({ data }) {
 
         article {
           display: flex;
-          gap: 15%;
           ${isTab && "flex-direction: column;"}
         }
 
         .left {
           width: ${isTab ? "100%" : "25%"};
+          padding-right: 5%;
+          flex-grow: 1;
+          flex-shrink: 1;
         }
 
         .left h4 {
@@ -120,6 +122,8 @@ export default function FrontendPortfolio({ data }) {
         }
 
         .right {
+          flex-grow: 1.3;
+          flex-shrink: 2;
           ${isTab ? "width:100%; margin-top: 30px;" : "width: 60%"}
         }
 

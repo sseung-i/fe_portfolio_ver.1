@@ -10,7 +10,7 @@ export default function NavMenu({ path, name, now }) {
             padding: 10px 20px;
             color: var(${now && "--common-main-color"});
             font-weight: ${now && "bold"};
-            font-size: 1.2rem;
+            font-size: 1.2em;
             opacity: ${now || "0.6"};
           }
           a:hover {
