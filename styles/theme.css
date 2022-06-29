@@ -1,3 +1,8 @@
+:root {
+  --common-main-color: #ff839a;
+  --common-font-color: #727071;
+}
+
 #ppaeyot {
   --ppayot-gra-color: linear-gradient(#ff839a, #fce8bb);
   --ppayot-index-tab-font-color: #ff839a;

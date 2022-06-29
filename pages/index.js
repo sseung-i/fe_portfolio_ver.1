@@ -15,13 +15,13 @@ export default function Index() {
           <li>
             <span>GITHUB</span>
             <Link href="https://github.com/sseung-i">
-              <a>sseung-i</a>
+              <a className="link">sseung-i</a>
             </Link>
           </li>
           <li>
             <span>BLOG</span>
             <Link href="https://velog.io/@sseung-i">
-              <a>@sseung-i</a>
+              <a className="link">@sseung-i</a>
             </Link>
           </li>
         </ul>
@@ -30,10 +30,56 @@ export default function Index() {
           프론트엔드가 되고싶습니다.
         </p>
       </article>
+      <article className="ability">
+        <article className="skills">
+          <h2>
+            <span>SKILLS</span>
+          </h2>
+          <ul>
+            <li>
+              <h4>DEVELOP</h4>
+              <ul>
+                <li>JavaScript ES6</li>
+                <li>React</li>
+                <li>Styled-Component</li>
+                <li>CSS (Scss)</li>
+              </ul>
+            </li>
+            <li>
+              <h4>DESIGN</h4>
+              <ul>
+                <li>Adobe Photoshop</li>
+                <li>Adobe Illustrator</li>
+                <li>Figma</li>
+              </ul>
+            </li>
+            <li>
+              <h4>Etc</h4>
+              <ul>
+                <li>GitHub</li>
+                <li>Trello</li>
+                <li>Notion</li>
+              </ul>
+            </li>
+          </ul>
+        </article>
+        <article className="certificate">
+          <h2>
+            <span>CERTIFICATE</span>
+          </h2>
+          <div>
+            <h4>DESIGN</h4>
+            <ul>
+              <li>GTQ-i 1급</li>
+              <li>GTQ 1급</li>
+              <li>컴퓨터그래픽스운용기능사</li>
+            </ul>
+          </div>
+        </article>
+      </article>
       <style jsx>{`
         section {
           padding: 100px 0;
-          text-align: center;
           border-top: 1px solid #eee;
         }
 
@@ -41,8 +87,24 @@ export default function Index() {
           font-size: 2.5rem;
         }
 
-        article.introduce {
-          padding-bottom: 30px;
+        h2 {
+          margin: 100px 0 50px;
+        }
+
+        h2 span {
+          color: #ff839a;
+          border-bottom: 3px solid #ff839a;
+          padding-bottom: 10px;
+        }
+
+        h4 {
+          margin-bottom: 14px;
+          font-size: 1.2rem;
+        }
+
+        .introduce {
+          padding-bottom: 100px;
+          text-align: center;
           border-bottom: 3px dashed #eee;
         }
 
@@ -68,6 +130,41 @@ export default function Index() {
           border-radius: 10px;
           margin-top: 30px;
           background: #eee;
+        }
+
+        .ability {
+          display: flex;
+        }
+
+        .skills {
+          width: 75%;
+        }
+
+        .certificate {
+          width: 25%;
+        }
+
+        .skills > ul {
+          display: flex;
+        }
+
+        .skills > ul > li {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .skills > ul > li > ul,
+        .certificate ul {
+          display: flex;
+          flex-direction: column;
+          gap: 7px;
+          padding-left: 14px;
+        }
+
+        .skills > ul > li > ul > li,
+        .certificate ul > li {
+          list-style: initial;
         }
       `}</style>
     </section>

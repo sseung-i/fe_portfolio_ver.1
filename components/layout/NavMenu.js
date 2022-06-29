@@ -8,7 +8,7 @@ export default function NavMenu({ path, name, now }) {
         <style jsx>{`
           a {
             padding: 10px 20px;
-            color: ${now && "#ff839a"};
+            color: var(${now && "--common-main-color"});
             font-weight: ${now && "bold"};
             font-size: 1.2rem;
             opacity: ${now || "0.6"};
