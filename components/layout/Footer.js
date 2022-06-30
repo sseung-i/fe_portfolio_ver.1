@@ -18,18 +18,17 @@ export default function Footer() {
 
       <style jsx>{`
         footer {
-          /* margin-top: 100px; */
           width: 100%;
           height: 300px;
-          background-color: #eee;
           border-radius: ${isTab || "300px 300px 0 0"};
           text-align: center;
         }
 
         footer > div {
-          padding: 100px 10% 0;
+          padding: 100px 10% 50px;
           margin: 0 auto;
           text-align: center;
+          background-color: #eee;
         }
 
         footer > div > h3 {

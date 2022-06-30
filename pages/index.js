@@ -79,7 +79,7 @@ export default function Index() {
                 alt="gmail icon"
               />
             </div>
-            mschoise@gamil.com
+            mschoise@gmail.com
           </li>
           <li>
             <div>
@@ -254,6 +254,7 @@ export default function Index() {
 
         .skills > ul {
           display: flex;
+          ${isTab && "flex-direction: column; gap: 30px;"}
         }
 
         .skills > ul > li {
