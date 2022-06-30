@@ -1,7 +1,11 @@
 import Link from "next/link";
+import { useContext } from "react";
+import { TestContext } from "../../components/MediaQueryProvider";
 
 export default function ProjectEx({ data }) {
   const { title, desc, siteUrl, githubUrl, pointColor } = data;
+
+  const { isDesktop, isLap, isTab } = useContext(TestContext);
 
   return (
     <section className="maxWidthWrap">
@@ -30,6 +34,10 @@ export default function ProjectEx({ data }) {
           margin-top: 20px;
           font-size: 1.2em;
           line-height: 1.5em;
+          text-align: ${isDesktop || "left"};
+          width: ${isDesktop || "80%"};
+          width: ${isTab && "90%"};
+          margin: ${isDesktop ? "20px 0 0 " : "20px auto 0"};
         }
 
         div {

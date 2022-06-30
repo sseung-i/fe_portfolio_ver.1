@@ -61,7 +61,7 @@ export default function ProjectPageInfo({ data }) {
 
         .pageCover {
           max-width: 800px;
-          height: 480px;
+          height: ${isDesktop ? "480px" : isLap ? "380px" : isTab && "250px"};
           margin: 0 auto;
           background-color: #eee;
           overflow: scroll;

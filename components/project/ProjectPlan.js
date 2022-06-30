@@ -57,22 +57,26 @@ export default function ProjectPlan({ data, children }) {
         li > div {
           ${isDesktop
             ? "height: 200px"
-            : isTab
-            ? "width: 90%; height: 270px; margin: 0 auto; border: 1px solid #ddd;"
-            : "width: 450px; height: 350px; margin: 0 auto; border: 1px solid #ddd;"}
+            : isLap
+            ? "width: 90%; height: 300px; margin: 0 auto; border: 1px solid #ddd;"
+            : isTab &&
+              "width: 90%; min-height:200px; max-height: 300px; margin: 0 auto;"}
         }
 
         li:nth-child(1) > div {
-          background: url(${plans[0].img}) no-repeat center center;
-          ${!isDesktop && "background-size: auto 110%"};
+          background: url(${plans[0].img}) no-repeat bottom center;
+          background-size: contain;
+          /* ${!isDesktop && "background-size: contain"}; */
         }
         li:nth-child(2) > div {
           background: url(${plans[1].img}) no-repeat center center;
-          ${!isDesktop && "background-size: auto 110%"};
+          background-size: contain;
+          /* ${!isDesktop && "background-size: contain"}; */
         }
         li:nth-child(3) > div {
           background: url(${plans[2].img}) no-repeat center center;
-          ${!isDesktop && "background-size: auto 110%"};
+          background-size: contain;
+          /* ${!isDesktop && "background-size: contain"}; */
         }
 
         li:nth-child(2)::before,
