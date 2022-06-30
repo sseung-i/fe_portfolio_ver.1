@@ -3,7 +3,7 @@ import { frontendInterns, frontendProject } from "../data/FRONTEND";
 
 export default function FrontEnd() {
   return (
-    <div className="maxWidthWrap">
+    <section className="maxWidthWrap">
       <h2>
         <span>INTERNSHIP</span>
       </h2>
@@ -23,6 +23,6 @@ export default function FrontEnd() {
           padding-bottom: 10px;
         }
       `}</style>
-    </div>
+    </section>
   );
 }

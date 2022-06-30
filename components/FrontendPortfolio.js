@@ -76,6 +76,14 @@ export default function FrontendPortfolio({ data }) {
           font-size: ${isTab ? "18px" : "16px"};
         }
 
+        section {
+          word-break: keep-all;
+        }
+
+        section * {
+          word-break: keep-all;
+        }
+
         section:not(:last-child) {
           border-bottom: 3px dashed #eee;
         }

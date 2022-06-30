@@ -1,60 +1,90 @@
 import Image from "next/image";
+import { useContext } from "react";
+import { TestContext } from "../../components/MediaQueryProvider";
 
 export default function ProjectPageInfoRespon({ data }) {
   const { desktop, tab, mobile } = data;
+
+  const { isDesktop, isLap, isTab } = useContext(TestContext);
+
   return (
-    <section className="maxWidthWrap">
-      <ul>
-        <li className="desktop">
-          <div>
-            <h3>DESKTOP</h3>
-            <p className="desktopBgImg" />
-            <div className="pageCover">
-              <Image
-                src={desktop}
-                width={507}
-                height={319}
-                alt="notebook image"
-              />
-              {/* <img src={desktop} alt="Index" /> */}
-            </div>
+    <section className={isDesktop && "maxWidthWrap"}>
+      {isTab ? (
+        <article>
+          <div className="pageCover">
+            <img src={desktop} alt="Index" />
           </div>
-        </li>
-        <li className="tab">
-          <div>
-            <h3>TAB</h3>
-            <p className="tabBgImg" />
-            <div className="pageCover">
-              <img src={tab} alt="Index" />
+          <p>desktop, mobile 이미지는 desktop에서 확인하실 수 있습니다.</p>
+        </article>
+      ) : (
+        <ul>
+          <li className="desktop">
+            <div>
+              <h3>DESKTOP</h3>
+              <p className="desktopBgImg" />
+              <div className="pageCover">
+                <img src={desktop} alt="Index" />
+              </div>
             </div>
-          </div>
-        </li>
-        <li className="mo">
-          <div>
-            <h3>MOBILE</h3>
-            <p className="moBgImg" />
-            <div className="pageCover">
-              <img src={mobile} alt="Index" />
+          </li>
+          <li className="tab">
+            <div>
+              <h3>TAB</h3>
+              <p className="tabBgImg" />
+              <div className="pageCover">
+                <img src={tab} alt="Index" />
+              </div>
             </div>
-          </div>
-        </li>
-      </ul>
+          </li>
+          <li className="mo">
+            <div>
+              <h3>MOBILE</h3>
+              <p className="moBgImg" />
+              <div className="pageCover">
+                <img src={mobile} alt="Index" />
+              </div>
+            </div>
+          </li>
+        </ul>
+      )}
 
       {/* 스타일 */}
       <style jsx>{`
+        section > article {
+          width: 90%;
+          margin: 50px auto 30px;
+          display: flex;
+          flex-direction: column;
+        }
+        section > article > .pageCover {
+          height: 330px;
+          overflow: scroll;
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        section > article > p {
+          margin-top: 30px;
+        }
+      `}</style>
+      <style jsx>{`
         section {
+          display: flex;
           position: relative;
-          top: -350px;
-          height: 200px;
+          top: ${isDesktop && "-350px"};
+          transform: ${isDesktop && "translateX(-50px)"};
+          height: ${isDesktop ? "200px" : "fit-content"};
           text-align: center;
         }
 
         ul {
+          position: relative;
           display: flex;
-          justify-content: space-between;
+          ${isDesktop
+            ? "justify-content: space-between;"
+            : "flex-direction:column; align-items: center; padding-top: 50px;"}
           width: 1000px;
           height: 400px;
-          margin: 0 auto 100px;
+          margin-bottom: 100px;
         }
 
         ul > li {
@@ -62,9 +92,7 @@ export default function ProjectPageInfoRespon({ data }) {
         }
 
         ul > li > div {
-          position: absolute;
-          left: 0;
-          bottom: 0;
+          ${isDesktop && "position: absolute; left: 0; bottom: 0;"};
         }
 
         h3 {
@@ -113,6 +141,7 @@ export default function ProjectPageInfoRespon({ data }) {
         }
 
         .tab {
+          display: ${isDesktop || "none"};
           width: 270px;
         }
 
@@ -139,10 +168,12 @@ export default function ProjectPageInfoRespon({ data }) {
         }
 
         .mo {
+          display: ${isTab && "none"};
           width: 118px;
         }
 
         .mo > div {
+          ${isLap && "position: absolute; bottom: -30px; right: -230px;"};
           width: 118px;
           height: 238px;
         }

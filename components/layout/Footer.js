@@ -19,16 +19,16 @@ export default function Footer() {
       <style jsx>{`
         footer {
           width: 100%;
-          height: 300px;
-          border-radius: ${isTab || "300px 300px 0 0"};
+          height: fit-content;
           text-align: center;
+          border-radius: ${isTab || "300px 300px 0 0"};
+          background-color: #eee;
         }
 
         footer > div {
           padding: 100px 10% 50px;
           margin: 0 auto;
           text-align: center;
-          background-color: #eee;
         }
 
         footer > div > h3 {

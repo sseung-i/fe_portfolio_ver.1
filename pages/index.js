@@ -6,11 +6,17 @@ import { TestContext } from "../components/MediaQueryProvider";
 const introduce = {
   desktop: `안녕하세요. 프론트엔드 개발자 최승이 입니다.`,
   lap: `안녕하세요.
-  프론트엔드 개발자 최승이 입니다.
+프론트엔드 개발자 최승이 입니다.
 `,
   tab: `안녕하세요.
 프론트엔드 개발자
 최승이 입니다.`,
+};
+
+const summary = {
+  desktop: `웹 표준을 고려하고 UI/UX를 생각하며 디자인과 퍼블리싱 경험을 배포하는 프론트엔드가 되고싶습니다.`,
+  lap: `웹 표준을 고려하고 UI/UX를 생각하며
+디자인과 퍼블리싱 경험을 배포하는 프론트엔드가 되고싶습니다.`,
 };
 
 export default function Index() {
@@ -28,8 +34,9 @@ export default function Index() {
         )}
         <div>
           <p className="summary">
-            웹 표준을 고려하고 UI/UX를 생각하며 디자인과 퍼블리싱 경험을
-            배포하는 프론트엔드가 되고싶습니다.
+            웹 표준을 고려하고 UI/UX를 생각하며
+            <br />
+            디자인과 퍼블리싱 경험을 배포하는 프론트엔드가 되고싶습니다.
           </p>
           {isDesktop ? (
             <p>
@@ -166,10 +173,16 @@ export default function Index() {
           border-top: 1px solid #eee;
         }
 
+        section * {
+          word-break: keep-all;
+        }
+
         h1 {
           font-size: 2.5em;
           line-height: 1.5;
-          text-align: ${isTab ? "left" : "center"};
+          width: inherit;
+          margin: ${isDesktop && "0 auto"};
+          /* text-align: ${isTab ? "left" : "center"}; */
         }
 
         h2 {
@@ -190,15 +203,17 @@ export default function Index() {
         .introduce {
           display: flex;
           flex-direction: column;
-          width: 100%;
+          width: fit-content;
           margin: 100px auto 0;
           padding-bottom: 100px;
-          text-align: center;
-          border-bottom: 3px dashed #eee;
+          /* text-align: center; */
+          text-align: ${isDesktop ? "center" : "left"};
         }
 
         .introduce > div {
           display: inline-block;
+          width: fit-content;
+          /* width: ${isDesktop ? "100%" : "70%"}; */
           border-radius: 10px;
           /* margin: 30px 0; */
           font-size: 1.2em;
@@ -207,19 +222,24 @@ export default function Index() {
         }
 
         .introduce > div > p.summary {
-          width: ${isTab ? "100%" : "70%"};
-          margin: ${isTab ? "50px 0 30px" : "30px auto "};
-          text-align: ${isTab && "left"};
+          /* width: ${isTab ? "100%" : "70%"}; */
+          margin: ${isTab ? "50px 0 30px" : "30px auto"};
+          text-align: ${isDesktop || "left"};
+          /* text-align: ${isTab && "left"}; */
           font-size: 1.2em;
           line-height: 1.5;
         }
 
         .introduce > div > p:not(.summary) {
+          /* width: ${isTab ? "100%" : "70%"}; */
+          margin: 0 auto;
+          text-align: ${isDesktop || "left"};
           font-weight: 300;
         }
 
         .myInfo {
-          display: flex;
+          display: ${isLap ? "grid" : "flex"};
+          grid-template-columns: repeat(2, 1fr);
           flex-direction: ${isDesktop ? "row" : "column"};
           justify-content: center;
           ${isTab ? "align-items:left" : "align-items:center"};
@@ -240,16 +260,20 @@ export default function Index() {
 
         .ability {
           display: flex;
-          flex-direction: ${isTab ? "column" : "row"};
+          flex-direction: ${isDesktop ? "row" : "column"};
+          /* flex-direction: ${isTab ? "column" : "row"}; */
+          border-top: 3px dashed #eee;
         }
 
         .skills {
-          width: ${isTab ? "100%" : "75%"};
+          width: ${isDesktop ? "75%" : "100%"};
+          /* width: ${isTab ? "100%" : "75%"}; */
           margin: ${isTab ? "0 auto" : ""};
         }
 
         .certificate {
-          width: ${isTab ? "100%" : "25%"};
+          width: ${isDesktop ? "25%" : "100%"};
+          /* width: ${isTab ? "100%" : "25%"}; */
         }
 
         .skills > ul {

@@ -12,10 +12,8 @@ export const projectIntroData = {
 
 export const projectExData = {
   title: "[제주인싸]이드(JEJU,INSIDE)",
-  desc: `‘ㅇㅇ인싸’는 해당 지역에대한 기본 정보뿐만아니라 요즘에 뜨는 여행지나 맛집 정보를 알 수 있고,
-  데스크탑으로 여행계획을 잡으며 내가 갈 곳을 찜도 하고 일정도 저장해두고,
-  여행중 모바일로 바로바로 확인할 수 있도록 합니다.
-  여행시 일기도 작성하여 나중에 추억으로 볼 수도 있습니다.`,
+  desc: `‘ㅇㅇ인싸’는 해당 지역에대한 기본 정보뿐만아니라 요즘에 뜨는 여행지나 맛집 정보를 알 수 있고, 데스크탑으로 여행계획을 잡으며 내가 갈 곳을 찜도 하고 일정도 저장해 여행중 모바일로 바로바로 확인할 수 있도록 합니다.
+여행시 일기도 작성하여 나중에 추억으로 볼 수도 있습니다.`,
   siteUrl: "https://sseung-i.github.io/publishing_jejuinside/",
   githubUrl: "https://github.com/sseung-i/publishing_jejuinside",
   pointColor: "--jejuinside-point-color",
