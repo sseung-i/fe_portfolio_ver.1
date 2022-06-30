@@ -1,7 +1,17 @@
+import Image from "next/image";
 import Link from "next/link";
-import css from "styled-jsx/css";
 import { useContext } from "react";
 import { TestContext } from "../components/MediaQueryProvider";
+
+const introduce = {
+  desktop: `안녕하세요. 프론트엔드 개발자 최승이 입니다.`,
+  lap: `안녕하세요.
+  프론트엔드 개발자 최승이 입니다.
+`,
+  tab: `안녕하세요.
+프론트엔드 개발자
+최승이 입니다.`,
+};
 
 export default function Index() {
   const { isDesktop, isLap, isTab } = useContext(TestContext);
@@ -9,51 +19,83 @@ export default function Index() {
   return (
     <section className="maxWidthWrap">
       <article className="introduce">
-        <div>
-          <h1>
-            안녕하세요.
-            <br />
-            프론트엔드 개발자 최승이 입니다.
-          </h1>
-          <ul className="myInfo">
-            <li>
-              <span>H.P</span>010-9253-8828
-            </li>
-            <li>
-              <span>E-MAIL</span>mschoise@gamil.com
-            </li>
-            <li>
-              <span>GITHUB</span>
-              <Link href="https://github.com/sseung-i">
-                <a className="link">sseung-i</a>
-              </Link>
-            </li>
-            <li>
-              <span>BLOG</span>
-              <Link href="https://velog.io/@sseung-i">
-                <a className="link">@sseung-i</a>
-              </Link>
-            </li>
-          </ul>
-        </div>
+        {isDesktop ? (
+          <h1>{introduce.desktop}</h1>
+        ) : isLap ? (
+          <h1>{introduce.lap}</h1>
+        ) : (
+          isTab && <h1>{introduce.tab}</h1>
+        )}
         <div>
           <p className="summary">
             웹 표준을 고려하고 UI/UX를 생각하며 디자인과 퍼블리싱 경험을
             배포하는 프론트엔드가 되고싶습니다.
           </p>
-          <p>
-            어느 분야에서나{" "}
-            <strong>새로운 기술을 습득하고 사용하는 경험</strong>, 팀 내/외부적{" "}
-            <strong>커뮤니케이션</strong>이 가장 중요하다고 여깁니다.
-            <br />
-            디자인, 퍼블리싱, 프론트엔드의 공통점은{" "}
-            <strong>‘심미성, 가시성, 새로운 것에 대한 관심’</strong>이라
-            생각합니다.
-            <br />
-            함께 일하는 동료들에게 영감을 줄 수 있는, 함께 하고 싶은 개발자가 될
-            수 있도록 노력하겠습니다.
-          </p>
+          {isTab || (
+            <p>
+              <strong>새로운 기술을 습득하고 사용하는 경험</strong>, 팀
+              내/외부적 <strong>커뮤니케이션</strong>이 가장 중요하다고
+              여깁니다.
+              <br />
+              디자인, 퍼블리싱, 프론트엔드의 공통점은{" "}
+              <strong>‘심미성, 가시성, 새로운 것에 대한 관심’</strong>이라
+              생각합니다.
+              <br />
+              함께 일하는 동료들에게 영감을 줄 수 있는, 함께 하고 싶은 개발자가
+              될 수 있도록 노력하겠습니다.
+            </p>
+          )}
         </div>
+        <ul className="myInfo">
+          <li>
+            <div>
+              <Image
+                src="/images/icons/phone.svg"
+                height={24}
+                width={24}
+                alt="phone icon"
+              />
+            </div>
+            010-9253-8828
+          </li>
+          <li>
+            <div>
+              <Image
+                src="/images/icons/gmail.svg"
+                height={24}
+                width={24}
+                alt="gmail icon"
+              />
+            </div>
+            mschoise@gamil.com
+          </li>
+          <li>
+            <div>
+              <Image
+                src="/images/icons/github.png"
+                height={24}
+                width={24}
+                alt="github icon"
+              />
+            </div>
+            <Link href="https://github.com/sseung-i">
+              <a className="link">sseung-i</a>
+            </Link>
+          </li>
+          <li>
+            <div>
+              <Image
+                src="/images/icons/velog.png"
+                height={24}
+                width={24}
+                alt="velog icon"
+              />
+            </div>
+            <Link href="https://velog.io/@sseung-i">
+              <a className="link">@sseung-i</a>
+            </Link>
+          </li>
+        </ul>
       </article>
       <article className="ability">
         <article className="skills">
@@ -103,6 +145,10 @@ export default function Index() {
         </article>
       </article>
       <style jsx>{`
+        .maxWidthWrap {
+          padding: ${isTab && "0 10%"};
+        }
+
         section {
           padding-bottom: 100px;
           border-top: 1px solid #eee;
@@ -110,8 +156,8 @@ export default function Index() {
 
         h1 {
           font-size: 2.5em;
-          line-height: 1.3;
-          text-align: center;
+          line-height: 1.5;
+          text-align: ${isTab ? "left" : "center"};
         }
 
         h2 {
@@ -119,8 +165,8 @@ export default function Index() {
         }
 
         h2 span {
-          color: #ff839a;
-          border-bottom: 3px solid #ff839a;
+          color: var(--common-main-color);
+          border-bottom: 3px solid var(--common-main-color);
           padding-bottom: 10px;
         }
 
@@ -130,52 +176,54 @@ export default function Index() {
         }
 
         .introduce {
+          display: flex;
+          flex-direction: column;
           width: 100%;
+          margin: 100px auto 0;
           padding-bottom: 100px;
           text-align: center;
           border-bottom: 3px dashed #eee;
         }
 
+        .introduce > div {
+          display: inline-block;
+          border-radius: 10px;
+          /* margin: 30px 0; */
+          font-size: 1.2em;
+          font-weight: 600;
+          line-height: 1.5;
+        }
+
+        .introduce > div > p.summary {
+          width: ${isTab ? "100%" : "70%"};
+          margin: ${isTab ? "50px 0 30px" : "30px auto "};
+          text-align: ${isTab && "left"};
+          font-size: 1.2em;
+          line-height: 1.5;
+        }
+
+        .introduce > div > p:not(.summary) {
+          font-weight: 300;
+        }
+
         .myInfo {
           display: flex;
-          flex-wrap: no-wrap;
+          flex-direction: ${isDesktop ? "row" : "column"};
+          justify-content: center;
+          ${isTab ? "align-items:left" : "align-items:center"};
+          flex-wrap: wrap;
           gap: 30px;
-          margin-top: 30px;
+          margin-top: ${isLap ? "50px" : "30px"};
           font-size: 1.2em;
         }
 
         .myInfo li {
-          width: fit-content;
-        }
-
-        .myInfo span {
-          margin-right: 10px;
-          font-weight: 600;
-        }
-
-        .introduce > div:first-child {
           display: flex;
-          flex-direction: column;
           width: fit-content;
-          margin: 100px auto;
-          text-align: left;
         }
 
-        .introduce > div:last-child > p.summary {
-          display: inline-block;
-          padding: 10px 30px;
-          border-radius: 10px;
-          margin-bottom: 30px;
-          font-size: 1.2em;
-          font-weight: 600;
-          line-height: 1.5;
-          background: #eee;
-        }
-
-        .introduce > div:last-child > p:not(.summary) {
-          margin: 0 auto;
-          font-size: 1.2em;
-          line-height: 1.5;
+        .myInfo div {
+          margin-right: 10px;
         }
 
         .ability {
