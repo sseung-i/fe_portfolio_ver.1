@@ -31,21 +31,13 @@ export default function ProjectIntro({ data }) {
             </Link>
           </li>
         </ul>
-        {!isDesktop ? (
-          <iframe
-            src={youtubeUrl}
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        ) : (
+        {isDesktop ? (
           <div className="notebook">
             <p />
             <div className="img">
               <div>
                 <iframe
-                  width="642"
+                  // width="642"
                   height="360"
                   src={youtubeUrl}
                   title="YouTube video player"
@@ -56,6 +48,14 @@ export default function ProjectIntro({ data }) {
               </div>
             </div>
           </div>
+        ) : (
+          <iframe
+            src={youtubeUrl}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
         )}
         <div className="circle" />
       </div>
@@ -70,8 +70,8 @@ export default function ProjectIntro({ data }) {
 
         .graBgWrap {
           position: relative;
-          max-width: 1000px;
-          height: ${isDesktop ? "750px" : "640px"};
+          height: ${isDesktop ? "750px" : "fit-content"};
+          padding-bottom: ${isDesktop || "30px"};
           margin: 0 auto;
           padding-top: 60px;
           color: #fff;
@@ -84,24 +84,29 @@ export default function ProjectIntro({ data }) {
 
         .graBgWrap > p {
           padding-top: 20px;
-          height: 50px;
           color: inherit;
         }
 
         ul {
           position: relative;
           display: flex;
-          justify-content: center;
-          gap: 20px;
-          height: 35px;
+          flex-wrap: ${isTab && "wrap"};
+          width: ${isTab ? "100%" : "fit-content"};
+          justify-content: ${isTab ? "space-between" : "center"};
+          gap: 10px 20px;
           margin: 50px auto 20px;
+          font-size: ${isTab && "12px"};
           text-align: center;
           z-index: 1;
         }
 
+        ul > li {
+          width: 100%;
+        }
+
         ul > li > a {
           display: inline-block;
-          width: 160px;
+          width: ${isTab ? "100%" : "160px"};
           height: 35px;
           line-height: 35px;
           color: var(--ppayot-index-tab-font-color);
@@ -122,6 +127,7 @@ export default function ProjectIntro({ data }) {
         }
 
         .circle {
+          display: ${isTab && "none"};
           position: absolute;
           bottom: 0;
           left: 2%;
@@ -142,11 +148,12 @@ export default function ProjectIntro({ data }) {
         }
 
         iframe {
-          /* position: relative; */
-          z-index: 1;
-          ${!isDesktop &&
-          "margin-top: 30px; width: 600px; box-shadow: 0 0 10px 0 rgba(0,0,0,0.2)"};
+          position: relative;
+          width: ${isDesktop ? " 642px; " : isLap ? "600px" : isTab && "100%"};
+          margin-top: ${isDesktop || "30px"};
+          box-shadow: ${isDesktop || "0 0 10px 0 rgba(0,0,0,0.2)"};
           aspect-ratio: 6/3.75;
+          z-index: 1;
         }
 
         .notebook > p {
