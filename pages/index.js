@@ -31,7 +31,7 @@ export default function Index() {
             웹 표준을 고려하고 UI/UX를 생각하며 디자인과 퍼블리싱 경험을
             배포하는 프론트엔드가 되고싶습니다.
           </p>
-          {isTab || (
+          {isDesktop ? (
             <p>
               <strong>새로운 기술을 습득하고 사용하는 경험</strong>, 팀
               내/외부적 <strong>커뮤니케이션</strong>이 가장 중요하다고
@@ -44,6 +44,18 @@ export default function Index() {
               함께 일하는 동료들에게 영감을 줄 수 있는, 함께 하고 싶은 개발자가
               될 수 있도록 노력하겠습니다.
             </p>
+          ) : isLap ? (
+            <p>
+              <strong>새로운 기술을 습득하고 사용하는 경험</strong>,<br />팀
+              내/외부적 <strong>커뮤니케이션</strong>이 가장 중요하다고
+              여깁니다.
+              <br />
+              함께 일하는 동료들에게 영감을 줄 수 있는,
+              <br />
+              함께 하고 싶은 개발자가 될 수 있도록 노력하겠습니다.
+            </p>
+          ) : (
+            isTab && ""
           )}
         </div>
         <ul className="myInfo">
@@ -146,7 +158,7 @@ export default function Index() {
       </article>
       <style jsx>{`
         .maxWidthWrap {
-          padding: ${isTab && "0 10%"};
+          padding: ${isTab && "0 10% 100px"};
         }
 
         section {
@@ -248,6 +260,7 @@ export default function Index() {
           display: flex;
           flex-direction: column;
           width: 100%;
+          margin-right: 5%;
         }
 
         .skills > ul > li > ul,
@@ -261,6 +274,11 @@ export default function Index() {
         .skills > ul > li > ul > li,
         .certificate ul > li {
           list-style: initial;
+          line-height: 1.3;
+        }
+
+        .certificate ul > li {
+          word-break: break-all;
         }
       `}</style>
     </section>

@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import { TestContext } from "../../components/MediaQueryProvider";
+
 export default function Footer() {
+  const { isDesktop, isLap, isTab } = useContext(TestContext);
+
   return (
     <footer>
       <div>
@@ -17,7 +22,7 @@ export default function Footer() {
           width: 100%;
           height: 300px;
           background-color: #eee;
-          border-radius: 300px 300px 0 0;
+          border-radius: ${isTab || "300px 300px 0 0"};
           text-align: center;
         }
 
@@ -32,17 +37,18 @@ export default function Footer() {
         }
 
         footer > div > ul {
+          display: flex;
+          justify-content: center;
+          ${isTab && "flex-direction:column; gap: 15px;"};
           margin-top: 30px;
         }
 
         footer > div > ul > li {
           padding: 0 30px;
-          display: inline-block;
-          border-right: 1px solid #666;
         }
 
-        footer > div > ul > li:nth-child(3) {
-          border: 0px;
+        footer > div > ul > li:not(:last-child) {
+          border-right: ${isTab || "1px solid #666"};
         }
 
         footer > div > p {

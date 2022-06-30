@@ -14,7 +14,7 @@ const publishing = [
 ];
 
 export default function Nav() {
-  const { isTab } = useContext(TestContext);
+  const { isDesktop, isLap, isTab } = useContext(TestContext);
   const router = useRouter();
 
   const nowPublishing =
@@ -24,16 +24,18 @@ export default function Nav() {
 
   return (
     <nav className="maxWidthWrap">
-      <Link href="/">
-        <a>
-          <Image
-            src="/images/logo.png"
-            alt="logo image"
-            width={100}
-            height={100}
-          />
-        </a>
-      </Link>
+      {isTab || (
+        <Link href="/">
+          <a>
+            <Image
+              src="/images/logo.png"
+              alt="logo image"
+              width={100}
+              height={100}
+            />
+          </a>
+        </Link>
+      )}
       <div>
         <NavMenu path={index} name="MAIN" now={router.pathname === index} />
         <NavMenu path={FE} name="Front-End" now={router.pathname === FE} />
@@ -55,10 +57,11 @@ export default function Nav() {
         }
         div {
           display: flex;
-          justify-content: flex-end;
+          justify-content: ${isTab ? "space-evenly" : "flex-end"};
           align-items: flex-end;
           width: 100%;
           color: #666;
+          text-align: center;
         }
       `}</style>
     </nav>
