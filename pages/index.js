@@ -3,22 +3,6 @@ import Link from "next/link";
 import { useContext } from "react";
 import { TestContext } from "../components/MediaQueryProvider";
 
-const introduce = {
-  desktop: `안녕하세요. 프론트엔드 개발자 최승이 입니다.`,
-  lap: `안녕하세요.
-프론트엔드 개발자 최승이 입니다.
-`,
-  tab: `안녕하세요.
-프론트엔드 개발자
-최승이 입니다.`,
-};
-
-const summary = {
-  desktop: `웹 표준을 고려하고 UI/UX를 생각하며 디자인과 퍼블리싱 경험을 배포하는 프론트엔드가 되고싶습니다.`,
-  lap: `웹 표준을 고려하고 UI/UX를 생각하며
-디자인과 퍼블리싱 경험을 배포하는 프론트엔드가 되고싶습니다.`,
-};
-
 export default function Index() {
   const { isDesktop, isLap, isTab } = useContext(TestContext);
 
@@ -26,11 +10,27 @@ export default function Index() {
     <section className="maxWidthWrap">
       <article className="introduce">
         {isDesktop ? (
-          <h1>{introduce.desktop}</h1>
+          <h1>
+            안녕하세요. <span className="spanPoint">프론트엔드 개발자</span>{" "}
+            <span className="spanName">최승이</span> 입니다.
+          </h1>
         ) : isLap ? (
-          <h1>{introduce.lap}</h1>
+          <h1>
+            안녕하세요.
+            <br />
+            <span className="spanPoint">프론트엔드 개발자</span>{" "}
+            <span className="spanName">최승이</span> 입니다.
+          </h1>
         ) : (
-          isTab && <h1>{introduce.tab}</h1>
+          isTab && (
+            <h1>
+              안녕하세요.
+              <br />
+              <span className="spanPoint">프론트엔드 개발자</span>
+              <br />
+              <span className="spanName">최승이</span> 입니다.
+            </h1>
+          )
         )}
         <div>
           <p className="summary">
@@ -183,6 +183,17 @@ export default function Index() {
           width: inherit;
           margin: ${isDesktop && "0 auto"};
           /* text-align: ${isTab ? "left" : "center"}; */
+        }
+
+        .spanPoint {
+          color: var(--common-main-color);
+        }
+
+        .spanName {
+          padding: 3px 10px;
+          background: var(--common-main-color);
+          color: #fff;
+          border-radius: 5px;
         }
 
         h2 {
