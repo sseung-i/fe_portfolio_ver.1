@@ -34,7 +34,7 @@ export const frontendProject = [
     links: {
       velog: "https://velog.io/@sseung-i/Project-GGSD-2주-프로젝트-회고록",
       github: "https://github.com/sseung-i/32-2nd-GGSD",
-      site: "http://www.ggsd.ml:8000/",
+      site: "http://13.56.151.244:8000/",
     },
     part: "프로젝트 생성, 프로젝트 상세 페이지",
     keyword: [
