@@ -34,9 +34,8 @@ export default function Index() {
         )}
         <div>
           <p className="summary">
-            웹 표준을 고려하고 UI/UX를 생각하며
-            <br />
-            디자인과 퍼블리싱 경험을 배포하는 프론트엔드가 되고싶습니다.
+            디자인과 퍼블리싱 경험을 바탕으로
+            <br />웹 표준과 UI/UX 중요성을 깊게 생각하는 프론트엔드 개발자
           </p>
           {isDesktop ? (
             <p>
