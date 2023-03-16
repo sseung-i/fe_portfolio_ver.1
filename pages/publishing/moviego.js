@@ -9,7 +9,7 @@ import {
   projectExData,
   ProjectConceptData,
   ProjectPageInfoData,
-} from "../../data/MOVIEGODATA";
+} from "../../utils/MOVIEGODATA";
 
 export default function Publishing() {
   const router = useRouter();

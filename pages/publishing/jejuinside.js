@@ -10,7 +10,7 @@ import {
   projectPlanData,
   ProjectConceptData,
   ProjectPageInfoData,
-} from "../../data/JEJUINSIDEDATA";
+} from "../../utils/JEJUINSIDEDATA";
 import ProjectPageInfoRespon from "../../components/project/ProjectPageInfo_respon";
 import ProjectIntroRespon from "../../components/project/ProjectIntro_respon";
 

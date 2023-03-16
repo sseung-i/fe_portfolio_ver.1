@@ -1,5 +1,5 @@
 import FrontendPortfolio from "../components/FrontendPortfolio";
-import { frontendInterns, frontendProject } from "../data/FRONTEND";
+import { frontendInterns, frontendProject } from "../utils/FRONTEND";
 
 export default function FrontEnd() {
   return (

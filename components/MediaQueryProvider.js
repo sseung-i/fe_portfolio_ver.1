@@ -14,8 +14,6 @@ export const IsResponsiveProvider = ({ children }) => {
     isTab: null,
   });
 
-  const { isDesktop, isLap, isTab } = isMedia;
-
   const desktop = useMediaQuery({
     query: "(min-width:993px)",
   });
@@ -29,43 +27,16 @@ export const IsResponsiveProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    if (desktop) {
-      setIsMedia({
-        isDesktop: true,
-        isLap: false,
-        isTab: false,
-      });
-    } else if (lap) {
-      setIsMedia({
-        isDesktop: false,
-        isLap: true,
-        isTab: false,
-      });
-    } else if (tab) {
-      setIsMedia({
-        isDesktop: false,
-        isLap: false,
-        isTab: true,
-      });
-    } else {
-      return;
-    }
+    setIsMedia({
+      isDesktop: desktop,
+      isLap: lap,
+      isTab: tab,
+    });
   }, [desktop, lap, tab]);
 
   return (
-    <TestContext.Provider value={{ isDesktop, isLap, isTab }}>
+    <TestContext.Provider value={{ ...isMedia }}>
       {children}
     </TestContext.Provider>
   );
 };
-
-// export function useIsDesktop() {
-//   const [isDesktop, setIsDesktop] = useState(false);
-//   const desktop = useMediaQuery({ query: "(min-width: 961px)" });
-
-//   useEffect(() => {
-//     if (desktop) setIsDesktop(desktop);
-//   }, [desktop]);
-
-//   return isDesktop;
-// }

@@ -12,8 +12,7 @@ import {
   projectPlanData,
   ProjectConceptData,
   ProjectPageInfoData,
-} from "../../data/PPAEYOTDATA";
-import Image from "next/image";
+} from "../../utils/PPAEYOTDATA";
 
 export default function Publishing() {
   const router = useRouter();
