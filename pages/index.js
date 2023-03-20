@@ -24,7 +24,7 @@ export default function Index() {
           {SUMMARY_DESC(mediaQuery)}
         </div>
         <ul className="myInfo">
-          {MYINFO.map(({ id, icon, size, link, text }) => {
+          {MYINFO.map(({ id, icon, size, link, link_href, text }) => {
             return (
               <li key={id}>
                 <div>
@@ -36,8 +36,10 @@ export default function Index() {
                   />
                 </div>
                 {link ? (
-                  <Link href={text}>
-                    <a className="link">{text}</a>
+                  <Link href={link_href}>
+                    <a className="link" target="_blank">
+                      {text}
+                    </a>
                   </Link>
                 ) : (
                   `${text}`

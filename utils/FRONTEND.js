@@ -1,5 +1,6 @@
 export const frontendExperience = [
   {
+    id: 1,
     title: "커넥틀리",
     info: "Beborn - 명품 이커머스 플랫폼",
     period: "22.07 ~ 23.03 (7개월)",
@@ -57,6 +58,7 @@ export const frontendExperience = [
 
 export const frontendInterns = [
   {
+    id: 1,
     title: `아르테위드
 레퍼런스 사이트`,
     info: "아르테위드는 클래식 종사자들을 위한 종합 서비스를 제공합니다.",
@@ -93,6 +95,7 @@ export const frontendInterns = [
 
 export const frontendProject = [
   {
+    id: 1,
     title: `개고수덜
 프로젝트 매칭 사이트`,
     team: "팀 구성: FE 4명 / BE 2명",
@@ -123,6 +126,7 @@ export const frontendProject = [
     ],
   },
   {
+    id: 2,
     title: `LuBean
 원두 판매 사이트`,
     team: "팀 구성: FE 4명 / BE 2명",
