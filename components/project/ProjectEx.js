@@ -12,12 +12,16 @@ export default function ProjectEx({ data }) {
       <h2>{title}</h2>
       <p>{desc}</p>
       <div>
-        <Link href={siteUrl}>
-          <a target="_blank">사이트 보러가기</a>
-        </Link>
-        <Link href={githubUrl}>
-          <a target="_blank">GITHUB</a>
-        </Link>
+        {siteUrl && (
+          <Link href={siteUrl}>
+            <a target="_blank">사이트 보러가기</a>
+          </Link>
+        )}
+        {githubUrl && (
+          <Link href={githubUrl}>
+            <a target="_blank">GITHUB</a>
+          </Link>
+        )}
       </div>
       <style jsx>{`
         section {

@@ -58,9 +58,22 @@ export default function FrontendPortfolio({ data }) {
                 ))}
               </div>
               <ul>
-                {desc.map((description, index) => (
-                  <li key={index}>{description}</li>
-                ))}
+                {desc.map((description, index) => {
+                  if (!description.child) {
+                    return <li key={index}>{description.title}</li>;
+                  } else {
+                    return (
+                      <li key={index}>
+                        <strong>{description.title}</strong>
+                        <ul className="childList">
+                          {description.child.map((childList, index) => {
+                            return <li key={index}>{childList.title}</li>;
+                          })}
+                        </ul>
+                      </li>
+                    );
+                  }
+                })}
               </ul>
             </div>
           </article>
@@ -141,8 +154,11 @@ export default function FrontendPortfolio({ data }) {
         }
 
         .right div {
+          margin: 15px 0;
+          padding-left: 16px;
+          border-left: 2px solid var(--common-font-color);
           font-weight: bold;
-          padding: 15px 0;
+          line-height: 1.2em;
         }
 
         .right div > p:not(:last-child) {
@@ -157,6 +173,10 @@ export default function FrontendPortfolio({ data }) {
           font-size: 0.9em;
           list-style: unset;
           line-height: 1.5;
+        }
+
+        .right .childList {
+          margin: 8px 0;
         }
 
         .right ul li:not(:last-child) {

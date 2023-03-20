@@ -34,7 +34,7 @@ export const SUMMARY = ({ isDesktop, isLap, isTab }) => {
   return (
     <>
       <p>
-        프론트엔드와 디자인, 퍼블리싱 경험으로
+        프론트엔드 개발과 디자인, 퍼블리싱 경험으로
         {isDesktop || isLap ? <br /> : " "}
         사용자 중심의 웹 개발을 추구하는 프론트엔드 개발자로 성장하겠습니다.
       </p>
@@ -59,7 +59,7 @@ export const SUMMARY_DESC = ({ isDesktop, isLap, isTab }) => {
         프론트엔드, 디자인, 퍼블리싱은 모두{" "}
         <strong>사용자 경험을 개선하는 것에 초점</strong>을 두고 있으며,
         {isDesktop ? <br /> : " "}
-        그동안의 경험들을 바탕으로{" "}
+        경험들을 바탕으로{" "}
         <strong>원활한 커뮤니케이션을 통해 더 나은 사용자 경험을 제공</strong>할
         수 있다고 생각합니다.
       </p>

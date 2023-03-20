@@ -1,9 +1,17 @@
 import FrontendPortfolio from "../components/FrontendPortfolio";
-import { frontendInterns, frontendProject } from "../utils/FRONTEND";
+import {
+  frontendExperience,
+  frontendInterns,
+  frontendProject,
+} from "../utils/FRONTEND";
 
 export default function FrontEnd() {
   return (
     <section className="maxWidthWrap">
+      <h2>
+        <span>EXPERIENCE</span>
+      </h2>
+      <FrontendPortfolio data={frontendExperience} />
       <h2>
         <span>INTERNSHIP</span>
       </h2>

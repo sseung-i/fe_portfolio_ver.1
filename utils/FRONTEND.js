@@ -1,6 +1,62 @@
+export const frontendExperience = [
+  {
+    title: "커넥틀리",
+    info: "Beborn - 명품 이커머스 플랫폼",
+    period: "22.07 ~ 23.03 (7개월)",
+    links: {
+      velog: null,
+      github: null,
+      site: "https://web.beborn.co.kr/",
+    },
+    part: "Beborn 웹앱 초기구축 / 운영 / 유지보수",
+    keyword: [
+      "React / Zustand / NodeJS / Styled-Component 사용",
+      "스웨거 사용한 백엔드와 소통",
+      "기능단위 스프린트 (개발 - QA - 배포)",
+      "Jira와 GitLab을 연동하여 이슈 및 브랜치관리",
+      "local - dev - qa - prod 4개의 개발 환경별로 각각 프로파일을 관리",
+    ],
+    desc: [
+      {
+        title:
+          "웹앱 - 초기셋팅부터 홈디스플레이, 기획전, 상품 검색/조회/필터, 장바구니, 결제, 마이페이지, 좋아요, 리뷰 등 이커머스의 필수 기능 구현",
+        child: [
+          {
+            title: "Zustand 사용한 상태관리 -  api호출과 전역 데이터 관리",
+          },
+          { title: "i’mport 결제 연동" },
+          {
+            title: "뒤로가기 시 history유지 필요 부분에 useLocationState사용",
+          },
+          { title: "React Portal 사용한 모달 구현" },
+          { title: "React HOC로 회원/비회원 권한분기" },
+          {
+            title:
+              "통일화된 코드로 용이한 유지보수를 위해 Express에서 NestJS로 마이그레이션 참여",
+          },
+          {
+            title: "Axios interceptors 사용한 refresh token, error handling",
+          },
+          { title: "GA, naver anlytics 스크립트 추가" },
+        ],
+      },
+      {
+        title: "어드민 (기획전 파트)",
+        child: [
+          {
+            title: "S3 이미지 업로드",
+          },
+          {
+            title: "엑셀 상품업로드",
+          },
+        ],
+      },
+    ],
+  },
+];
+
 export const frontendInterns = [
   {
-    id: 1,
     title: `아르테위드
 레퍼런스 사이트`,
     info: "아르테위드는 클래식 종사자들을 위한 종합 서비스를 제공합니다.",
@@ -14,19 +70,29 @@ export const frontendInterns = [
     part: "커뮤니티 리스트 / 생성 / 디테일 / 수정 페이지",
     keyword: ["React / Styled-Component 사용", "Postman 사용한 데이터 통신"],
     desc: [
-      "Promise API를 활용하는 비동기 통신 라이브러리인 axios 사용",
-      "async/await 사용한 비동기적 통신",
-      "Promise.all 사용한 병렬 통신",
-      "Quill(Text editor) 라이브러리를 생성 / 디테일(읽기전용) / 수정 페이지에 적용",
-      "공용으로 사용하는 무한스크롤, 날짜형식 변환 로직을 Custom hook으로 구현",
-      "로그인 유저와 작성자를 비교하여 게시글과 댓글 버튼 활성화 상태 분리",
+      {
+        title: "Promise API를 활용하는 비동기 통신 라이브러리인 axios 사용",
+      },
+      { title: "async/await 사용한 비동기적 통신" },
+      { title: "Promise.all 사용한 병렬 통신" },
+      {
+        title:
+          "Quill(Text editor) 라이브러리를 생성 / 디테일(읽기전용) / 수정 페이지에 적용",
+      },
+      {
+        title:
+          "공용으로 사용하는 무한스크롤, 날짜형식 변환 로직을 Custom hook으로 구현",
+      },
+      {
+        title:
+          "로그인 유저와 작성자를 비교하여 게시글과 댓글 버튼 활성화 상태 분리",
+      },
     ],
   },
 ];
 
 export const frontendProject = [
   {
-    id: 1,
     title: `개고수덜
 프로젝트 매칭 사이트`,
     team: "팀 구성: FE 4명 / BE 2명",
@@ -42,14 +108,21 @@ export const frontendProject = [
       "React / Styled-Component 사용",
     ],
     desc: [
-      "URL.createObjectURL()활용한 preview 구현",
-      "신규 프로젝트 submit 시 async/await으로 비동기 처리하여S3 요청 -> 응답데이터 BODY에 넣어서 Fetch post 요청",
-      "localStorage의 token을 사용하여 Fetch post 요청하여 유저정보에 생성 프로젝트 또는 쪼인한 프로젝트 담김",
-      "React-calendar 라이브러리 사용",
+      {
+        title: "URL.createObjectURL()활용한 preview 구현",
+      },
+      {
+        title:
+          "신규 프로젝트 submit 시 async/await으로 비동기 처리하여S3 요청 -> 응답데이터 BODY에 넣어서 Fetch post 요청",
+      },
+      {
+        title:
+          "localStorage의 token을 사용하여 Fetch post 요청하여 유저정보에 생성 프로젝트 또는 쪼인한 프로젝트 담김",
+      },
+      { title: "React-calendar 라이브러리 사용" },
     ],
   },
   {
-    id: 2,
     title: `LuBean
 원두 판매 사이트`,
     team: "팀 구성: FE 4명 / BE 2명",
@@ -62,9 +135,12 @@ export const frontendProject = [
     part: "NAV, 상품 리스트 페이지",
     keyword: ["러쉬를 모티브로 한 팀 프로젝트", "React / Scss 사용"],
     desc: [
-      "MouseEvent 사용한 하위메뉴바 드롭다운 구현",
-      "Path Parameters 로 Nav의 페이지 이동 구현",
-      "Fetch로 상품 데이터(전체상품) 요청 후 프론트에서 카테고리 별데이터 필터링(params.includes)",
+      { title: "MouseEvent 사용한 하위메뉴바 드롭다운 구현" },
+      { title: "Path Parameters 로 Nav의 페이지 이동 구현" },
+      {
+        title:
+          "Fetch로 상품 데이터(전체상품) 요청 후 프론트에서 카테고리 별데이터 필터링(params.includes)",
+      },
     ],
   },
 ];

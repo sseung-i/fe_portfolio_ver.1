@@ -11,7 +11,8 @@ export const projectExData = {
   desc: `온라인 스트리밍이 아닌 오프라인 영화관 사이트입니다.
   '영화'+'가다' = 가서 영화를 본다는 심플한 단어 조합으로 기억/부르기 쉽도록 네이밍 하였으며,
   기존 영화관사이트들을 조사하여 영화관사이트에 꼭 필요한 부분들만 모아 기획하였습니다.`,
-  siteUrl: "https://sseung-i.github.io/publishing_moviego/",
+  // siteUrl: "https://sseung-i.github.io/publishing_moviego/",
+  siteUrl: null,
   githubUrl: "https://github.com/sseung-i/publishing_moviego",
   pointColor: "--moviego-point-color",
 };

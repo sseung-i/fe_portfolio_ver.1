@@ -11,7 +11,8 @@ export const projectExData = {
 운동의 정확한 자세 등 선별된 동영상/이미지 컨텐츠, 다이어트 식단을 좀 더 맛있게, 간편하게, 눈으로 즐겁게 할 수 있는 레시피와 구매, 회원제인 전문가로부터 피드백까지 다양한 컨텐츠가 있습니다.
 
 온라인에 널려있는 정보들보다 정확하게 정보제공하며 회원들끼리 정보도 공유할 수 있어 다이어트의 모든 정보를 최대한 얻을 수 있도록 합니다.`,
-  siteUrl: "https://sseung-i.github.io/publishing_ppaeyot/",
+  // siteUrl: "https://sseung-i.github.io/publishing_ppaeyot/",
+  siteUrl: null,
   githubUrl: "https://github.com/sseung-i/publishing_ppaeyot",
   pointColor: "--ppayot-point-color",
 };
