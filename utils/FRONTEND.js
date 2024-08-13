@@ -1,13 +1,76 @@
 export const frontendExperience = [
   {
     id: 1,
+    title: "스냅태그",
+    info: "비가시성 워터마크 및 보안 서비스",
+    period: "23.06 ~ ",
+    links: {
+      velog: null,
+      github: null,
+      site: "https://snaptag.co.kr/ko",
+    },
+    part: "웹 초기구축 / 운영 / 유지보수 및 보안관련 기능테스트",
+    keyword: [
+      "기존 React 프로젝트, Next.js 12/14 사용한 초기구축 및 유지보수",
+      "포트원 결제 연동한 이커머스 개발",
+      "Flutter를 사용한 데스크탑 앱 개발",
+      "스웨거 사용한 백엔드와 소통",
+      "dev 환경 구축하여 운영 및 개발 환경분리",
+    ],
+    desc: [
+      {
+        title: "데스크탑 임베딩 프로그램 프로토타입",
+        child: [
+          "window/macos용 빌드 설정",
+          "백엔드 api와 내부 sdk 연결",
+          "Bloc패턴을 통한 state 타입별 관리",
+        ],
+      },
+      {
+        title: "IUFC 포토카드 - 어드민 초기셋팅 및 기능 개발",
+        child: [
+          "기획, 백엔드와의 기능 및 일정 협의 통한 개발 순서 조율",
+          "팀프로젝트로써 용이한 작업을 위한 재사용가능한 컴포넌트/함수 정의",
+        ],
+      },
+      {
+        title: "홈페이지 리뉴얼 / 신규 / 유지보수",
+        child: [
+          "채용 게시판 페이지 & 어드민",
+          "middleware와 cookie, user locale을 사용한 다국어 홈페이지로 3개의 사이트 리뉴얼",
+          "신규 반응형 홈페이지(Ai, 랩가드) 구축",
+          "스냅태그 홈페이지 전면 리뉴얼",
+        ],
+      },
+      {
+        title: "Keefo - 웹앱 초기구축 / 운영 / 유지보수",
+        child: [
+          "앱을 통해서만 접근 가능한 상품구매 페이지와 티켓 판매 사이트 분기처리",
+          "포트원 결제 연동",
+          "tanstack query 사용한 효율적인 데이터 페칭",
+          "Axios interceptors 사용한 refresh token, error handling",
+        ],
+      },
+      {
+        title: "그 외 기타 업무",
+        child: [
+          "현장관리자용 사전등록 및 체크인 관리 웹",
+          "프로토타입을 위한 포토샵 임베딩 플러그인 기능 테스트",
+          "프로토타입을 위한 브라우저 dom 조작관련 기능 테스트",
+          "기존 작업자에 따라 다르게 관리되고있어서 dev 환경 구축",
+        ],
+      },
+    ],
+  },
+  {
+    id: 1,
     title: "커넥틀리",
-    info: "Beborn - 명품 이커머스 플랫폼",
+    info: "명품 이커머스 플랫폼",
     period: "22.07 ~ 23.03 (7개월)",
     links: {
       velog: null,
       github: null,
-      site: "https://web.beborn.co.kr/",
+      site: null,
     },
     part: "Beborn 웹앱 초기구축 / 운영 / 유지보수",
     keyword: [
@@ -22,35 +85,20 @@ export const frontendExperience = [
         title:
           "웹앱 - 초기셋팅부터 홈디스플레이, 기획전, 상품 검색/조회/필터, 장바구니, 결제, 마이페이지, 좋아요, 리뷰 등 이커머스의 필수 기능 구현",
         child: [
-          {
-            title: "Zustand 사용한 상태관리 -  api호출과 전역 데이터 관리",
-          },
-          { title: "i’mport 결제 연동" },
-          {
-            title: "뒤로가기 시 history유지 필요 부분에 useLocationState사용",
-          },
-          { title: "React Portal 사용한 모달 구현" },
-          { title: "React HOC로 회원/비회원 권한분기" },
-          {
-            title:
-              "통일화된 코드로 용이한 유지보수를 위해 Express에서 NestJS로 마이그레이션 참여",
-          },
-          {
-            title: "Axios interceptors 사용한 refresh token, error handling",
-          },
-          { title: "GA, naver anlytics 스크립트 추가" },
+          "Zustand 사용한 상태관리 -  api호출과 전역 데이터 관리",
+          "i’mport(현 포트원) 결제 연동",
+          "뒤로가기 시 history유지 필요 부분에 useLocationState사용",
+          "React Portal 사용한 모달 구현",
+          "React HOC로 회원/비회원 권한분기",
+
+          "통일화된 코드로 용이한 유지보수를 위해 Express에서 NestJS로 마이그레이션 참여",
+          "Axios interceptors 사용한 refresh token, error handling",
+          "GA, naver anlytics 스크립트 추가",
         ],
       },
       {
         title: "어드민 (기획전 파트)",
-        child: [
-          {
-            title: "S3 이미지 업로드",
-          },
-          {
-            title: "엑셀 상품업로드",
-          },
-        ],
+        child: ["S3 이미지 업로드", , "엑셀 상품업로드", ,],
       },
     ],
   },

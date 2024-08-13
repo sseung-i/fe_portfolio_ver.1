@@ -14,9 +14,9 @@ export default function FrontendPortfolio({ data }) {
 
   return (
     <section>
-      {data.map((intern) => {
+      {data.map((work) => {
         const { id, title, info, team, period, links, part, keyword, desc } =
-          intern;
+          work;
 
         return (
           <article key={id}>
@@ -67,7 +67,7 @@ export default function FrontendPortfolio({ data }) {
                         <strong>{description.title}</strong>
                         <ul className="childList">
                           {description.child.map((childList, index) => {
-                            return <li key={index}>{childList.title}</li>;
+                            return <li key={index}>{childList}</li>;
                           })}
                         </ul>
                       </li>

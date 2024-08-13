@@ -2,8 +2,7 @@ export const INTRODUCE = ({ isDesktop, isLap, isTab }) => {
   return (
     <>
       <h1>
-        안녕하세요.
-        {(isLap || isTab) && <br />}
+        안녕하세요. {(isLap || isTab) && <br />}
         <span className="point">프론트엔드 개발자</span> {isTab && <br />}
         <span className="name">최승이</span> 입니다.
       </h1>
@@ -34,9 +33,9 @@ export const SUMMARY = ({ isDesktop, isLap, isTab }) => {
   return (
     <>
       <p>
-        프론트엔드 개발과 디자인, 퍼블리싱 경험으로
+        프론트엔드 개발과 퍼블리싱, 디자인 경험으로
         {isDesktop || isLap ? <br /> : " "}
-        사용자 중심의 웹 개발을 추구하는 프론트엔드 개발자로 성장하겠습니다.
+        사용자 중심의 개발을 추구하는 프론트엔드 개발자로 성장하겠습니다.
       </p>
       <style jsx>{`
         p {
@@ -56,7 +55,7 @@ export const SUMMARY_DESC = ({ isDesktop, isLap, isTab }) => {
   return (
     <>
       <p>
-        프론트엔드, 디자인, 퍼블리싱은 모두{" "}
+        프론트엔드, 퍼블리싱, 디자인은 모두{" "}
         <strong>사용자 경험을 개선하는 것에 초점</strong>을 두고 있으며,
         {isDesktop ? <br /> : " "}
         경험들을 바탕으로{" "}
@@ -121,22 +120,24 @@ export const SKILLS = [
   {
     id: "DEVELOP",
     skills: [
+      "Next.js",
+      "React",
+      "Flutter",
       "JavaScript",
       "Typescript",
-      "React",
-      "Zustand",
       "NodeJS",
+      "Zustand",
       "Styled-Component",
       "CSS (Scss)",
     ],
   },
   {
     id: "DESIGN",
-    skills: ["Adobe Photoshop", "Adobe Illustrator", "Figma"],
+    skills: ["Figma", "Adobe Photoshop", "Adobe Illustrator"],
   },
   {
     id: "ETC",
-    skills: ["Jira", "GitHub/GitLab", "Trello", "Notion"],
+    skills: ["GitHub/GitLab", "Jira", "Trello", "Notion"],
   },
 ];
 

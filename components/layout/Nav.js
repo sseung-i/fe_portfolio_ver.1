@@ -50,7 +50,7 @@ export default function Nav() {
         nav {
           display: flex;
           padding: 30px 0 10px;
-          /* padding: ${isTab ? "0 7%" : "30px 0 10px"}; */
+          padding: ${isDesktop ? "" : isLap ? "30px 0 10px 20px" : isTab && ""};
         }
         img {
           width: 70px;
