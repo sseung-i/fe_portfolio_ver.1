@@ -194,7 +194,8 @@ export default function FrontendPortfolio({ data }) {
 
         .right .descLinkTitle {
           display: flex;
-          align-items: center;
+          flex-direction: ${isTab ? "column" : "row"};
+          align-items: ${isTab ? "flex-start" : "column"};
           gap: 10px;
         }
 
