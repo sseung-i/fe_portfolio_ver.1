@@ -13,7 +13,7 @@ export default function Footer() {
           <li>010-9253-8828</li>
           <li>mschoise@gmail.com</li>
         </ul>
-        <p>Copyright&copy;2022 ChoiSeungI portfolio</p>
+        <p>Copyright&copy;2024 ChoiSeungI portfolio</p>
       </div>
 
       <style jsx>{`

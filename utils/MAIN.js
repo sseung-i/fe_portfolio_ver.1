@@ -127,8 +127,9 @@ export const SKILLS = [
       "Typescript",
       "NodeJS",
       "Zustand",
+      "Tanstack(React)Query",
       "Styled-Component",
-      "CSS (Scss)",
+      "CSS (Scss, module)",
     ],
   },
   {

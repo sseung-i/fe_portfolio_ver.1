@@ -30,11 +30,11 @@ export default function FrontendPortfolio({ data }) {
               <li className="links">
                 <ul>
                   {Object.entries(links).map(([key, value]) => {
-                    if (value === null) return;
+                    if (!value.length) return;
 
-                    return (
-                      <li key={key}>
-                        <Link href={value}>
+                    return value.map((link, index) => (
+                      <li key={`${key}_${index}`}>
+                        <Link href={link}>
                           <a target="_blank">
                             <Image
                               alt={key}
@@ -45,14 +45,14 @@ export default function FrontendPortfolio({ data }) {
                           </a>
                         </Link>
                       </li>
-                    );
+                    ));
                   })}
                 </ul>
               </li>
             </ul>
             <div className="right">
               <h5>Part: {part}</h5>
-              <div>
+              <div className="keyword">
                 {keyword.map((word, index) => (
                   <p key={index}>{word}</p>
                 ))}
@@ -62,9 +62,26 @@ export default function FrontendPortfolio({ data }) {
                   if (!description.child) {
                     return <li key={index}>{description.title}</li>;
                   } else {
+                    const links = description?.links;
                     return (
                       <li key={index}>
-                        <strong>{description.title}</strong>
+                        <div className="descLinkTitle">
+                          <strong>{description.title}</strong>
+                          <div>
+                            {links?.map((link) => (
+                              <Link href={link}>
+                                <a target="_blank">
+                                  <Image
+                                    alt={link}
+                                    src={LINKICONS["site"]}
+                                    width={20}
+                                    height={20}
+                                  />
+                                </a>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
                         <ul className="childList">
                           {description.child.map((childList, index) => {
                             return <li key={index}>{childList}</li>;
@@ -153,7 +170,7 @@ export default function FrontendPortfolio({ data }) {
           font-weight: 800;
         }
 
-        .right div {
+        .right .keyword {
           margin: 15px 0;
           padding-left: 16px;
           border-left: 2px solid var(--common-font-color);
@@ -173,6 +190,27 @@ export default function FrontendPortfolio({ data }) {
           font-size: 0.9em;
           list-style: unset;
           line-height: 1.5;
+        }
+
+        .right .descLinkTitle {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .right .descLinkTitle div {
+          display: flex;
+          gap: 4px;
+        }
+
+        .right .descLinkTitle div a {
+          width: 20px;
+          height: 20px;
+          opacity: 0.4;
+        }
+
+        .right .descLinkTitle div a:hover {
+          opacity: 1;
         }
 
         .right .childList {

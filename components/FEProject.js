@@ -23,11 +23,11 @@ export default function FEProject() {
               <li className="period">{period}</li>
               <li className="links">
                 <ul>
-                  {Object.entries(links).map(([key, value]) => {
+                  {Object.entries(links).map(([key, value], index) => {
                     if (value === null) return;
 
                     return (
-                      <li key={key}>
+                      <li key={`${key}_${index}`}>
                         <Link href={value}>
                           <a>
                             <Image
