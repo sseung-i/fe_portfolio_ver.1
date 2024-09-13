@@ -68,8 +68,8 @@ export default function FrontendPortfolio({ data }) {
                         <div className="descLinkTitle">
                           <strong>{description.title}</strong>
                           <div>
-                            {links?.map((link) => (
-                              <Link href={link}>
+                            {links?.map((link, index) => (
+                              <Link key={`link_${index}`} href={link}>
                                 <a target="_blank">
                                   <Image
                                     alt={link}
